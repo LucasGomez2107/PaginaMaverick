@@ -1,0 +1,364 @@
+[
+  {
+    "season": "2026-27",
+    "wins": null,
+    "losses": null,
+    "coach": "Jason Kidd",
+    "playoff": "in_progress",
+    "note": "temporada en curso — actualizar con el importador"
+  },
+  {
+    "season": "2025-26",
+    "wins": 26,
+    "losses": 56,
+    "coach": "Jason Kidd",
+    "playoff": "missed",
+    "note": "datos parciales"
+  },
+  {
+    "season": "2024-25",
+    "wins": 39,
+    "losses": 43,
+    "coach": "Jason Kidd",
+    "playoff": "missed",
+    "note": "Luka Dončić traspasado a los Lakers el 2 de febrero (llegó Anthony Davis); eliminados en el play-in"
+  },
+  {
+    "season": "2023-24",
+    "wins": 50,
+    "losses": 32,
+    "coach": "Jason Kidd",
+    "playoff": "finals",
+    "note": "Finales de la NBA (cayeron 4-1 ante Boston)"
+  },
+  {
+    "season": "2022-23",
+    "wins": 38,
+    "losses": 44,
+    "coach": "Jason Kidd",
+    "playoff": "missed",
+    "note": "Kyrie Irving llegó vía traspaso en febrero"
+  },
+  {
+    "season": "2021-22",
+    "wins": 52,
+    "losses": 30,
+    "coach": "Jason Kidd",
+    "playoff": "conf_finals",
+    "note": "Primer año de Jason Kidd; Finales del Oeste (cayeron 4-1 ante Golden State)"
+  },
+  {
+    "season": "2020-21",
+    "wins": 42,
+    "losses": 30,
+    "coach": "Rick Carlisle",
+    "playoff": "first_round",
+    "note": "Temporada de 72 partidos; cayeron 4-3 ante los Clippers"
+  },
+  {
+    "season": "2019-20",
+    "wins": 43,
+    "losses": 32,
+    "coach": "Rick Carlisle",
+    "playoff": "first_round",
+    "note": "Temporada interrumpida por la COVID-19 (75 partidos, burbuja de Orlando); cayeron 4-2 ante los Clippers"
+  },
+  {
+    "season": "2018-19",
+    "wins": 33,
+    "losses": 49,
+    "coach": "Rick Carlisle",
+    "playoff": "missed",
+    "note": "Rookie del Año Luka Dončić; última temporada de Dirk Nowitzki"
+  },
+  {
+    "season": "2017-18",
+    "wins": 24,
+    "losses": 58,
+    "coach": "Rick Carlisle",
+    "playoff": "missed",
+    "note": "Selección de Dennis Smith Jr. y Dirk supera a Wilt Chamberlain en puntos de por vida"
+  },
+  {
+    "season": "2016-17",
+    "wins": 33,
+    "losses": 49,
+    "coach": "Rick Carlisle",
+    "playoff": "missed"
+  },
+  {
+    "season": "2015-16",
+    "wins": 42,
+    "losses": 40,
+    "coach": "Rick Carlisle",
+    "playoff": "first_round",
+    "note": "Cayeron 4-1 ante Oklahoma City"
+  },
+  {
+    "season": "2014-15",
+    "wins": 50,
+    "losses": 32,
+    "coach": "Rick Carlisle",
+    "playoff": "first_round",
+    "note": "Cayeron 4-1 ante Houston"
+  },
+  {
+    "season": "2013-14",
+    "wins": 49,
+    "losses": 33,
+    "coach": "Rick Carlisle",
+    "playoff": "first_round",
+    "note": "Cayeron 4-3 ante San Antonio"
+  },
+  {
+    "season": "2012-13",
+    "wins": 41,
+    "losses": 41,
+    "coach": "Rick Carlisle",
+    "playoff": "missed",
+    "note": "Primera vez sin playoffs desde 2000"
+  },
+  {
+    "season": "2011-12",
+    "wins": 36,
+    "losses": 30,
+    "coach": "Rick Carlisle",
+    "playoff": "first_round",
+    "note": "Temporada recortada por el cierre patronal (66 partidos); barridos 4-0 por Oklahoma City"
+  },
+  {
+    "season": "2010-11",
+    "wins": 57,
+    "losses": 25,
+    "coach": "Rick Carlisle",
+    "playoff": "champion",
+    "note": "Primer campeonato de la franquicia (4-2 a Miami en las Finales)"
+  },
+  {
+    "season": "2009-10",
+    "wins": 55,
+    "losses": 27,
+    "coach": "Rick Carlisle",
+    "playoff": "first_round",
+    "note": "Cayeron 4-2 ante San Antonio"
+  },
+  {
+    "season": "2008-09",
+    "wins": 50,
+    "losses": 32,
+    "coach": "Rick Carlisle",
+    "playoff": "second_round",
+    "note": "Primer año de Rick Carlisle; cayeron ante Denver"
+  },
+  {
+    "season": "2007-08",
+    "wins": 51,
+    "losses": 31,
+    "coach": "Avery Johnson",
+    "playoff": "first_round",
+    "note": "Jason Kidd llegó vía traspaso en febrero; cayeron 4-1 ante New Orleans"
+  },
+  {
+    "season": "2006-07",
+    "wins": 67,
+    "losses": 15,
+    "coach": "Avery Johnson",
+    "playoff": "first_round",
+    "note": "Mejor récord de la historia de la franquicia; eliminados 4-2 por Golden State como 1.º del Oeste"
+  },
+  {
+    "season": "2005-06",
+    "wins": 60,
+    "losses": 22,
+    "coach": "Avery Johnson",
+    "playoff": "finals",
+    "note": "Primeras Finales de la NBA de la franquicia (cayeron 4-2 ante Miami)"
+  },
+  {
+    "season": "2004-05",
+    "wins": 58,
+    "losses": 24,
+    "coach": "Don Nelson",
+    "playoff": "second_round",
+    "note": "Avery Johnson asumió el banquillo en marzo tras la renuncia de Nelson"
+  },
+  {
+    "season": "2003-04",
+    "wins": 52,
+    "losses": 30,
+    "coach": "Don Nelson",
+    "playoff": "first_round",
+    "note": "Cayeron 4-1 ante Sacramento"
+  },
+  {
+    "season": "2002-03",
+    "wins": 60,
+    "losses": 22,
+    "coach": "Don Nelson",
+    "playoff": "conf_finals",
+    "note": "Finales del Oeste (cayeron 4-2 ante San Antonio)"
+  },
+  {
+    "season": "2001-02",
+    "wins": 57,
+    "losses": 25,
+    "coach": "Don Nelson",
+    "playoff": "second_round",
+    "note": "Barrieron a Minnesota 3-0; cayeron ante Sacramento"
+  },
+  {
+    "season": "2000-01",
+    "wins": 53,
+    "losses": 29,
+    "coach": "Don Nelson",
+    "playoff": "second_round",
+    "note": "Primera clasificación a playoffs desde 1990 (venció a Utah 3-2, cayó ante San Antonio)"
+  },
+  {
+    "season": "1999-00",
+    "wins": 40,
+    "losses": 42,
+    "coach": "Don Nelson",
+    "playoff": "missed"
+  },
+  {
+    "season": "1998-99",
+    "wins": 19,
+    "losses": 31,
+    "coach": "Don Nelson",
+    "playoff": "missed",
+    "note": "Temporada recortada por el cierre patronal (50 partidos); debut de Dirk Nowitzki"
+  },
+  {
+    "season": "1997-98",
+    "wins": 20,
+    "losses": 62,
+    "coach": "Don Nelson",
+    "playoff": "missed"
+  },
+  {
+    "season": "1996-97",
+    "wins": 24,
+    "losses": 58,
+    "coach": "Jim Cleamons",
+    "playoff": "missed",
+    "note": "Kidd fue traspasado a Phoenix en diciembre (llegó Michael Finley)"
+  },
+  {
+    "season": "1995-96",
+    "wins": 26,
+    "losses": 56,
+    "coach": "Dick Motta",
+    "playoff": "missed"
+  },
+  {
+    "season": "1994-95",
+    "wins": 36,
+    "losses": 46,
+    "coach": "Dick Motta",
+    "playoff": "missed"
+  },
+  {
+    "season": "1993-94",
+    "wins": 13,
+    "losses": 69,
+    "coach": "Quinn Buckner",
+    "playoff": "missed"
+  },
+  {
+    "season": "1992-93",
+    "wins": 11,
+    "losses": 71,
+    "coach": "Gar Heard",
+    "playoff": "missed",
+    "note": "Peor récord de la historia de la franquicia (Adubato fue relevado durante la temporada)"
+  },
+  {
+    "season": "1991-92",
+    "wins": 22,
+    "losses": 60,
+    "coach": "Richie Adubato",
+    "playoff": "missed"
+  },
+  {
+    "season": "1990-91",
+    "wins": 28,
+    "losses": 54,
+    "coach": "Richie Adubato",
+    "playoff": "missed"
+  },
+  {
+    "season": "1989-90",
+    "wins": 47,
+    "losses": 35,
+    "coach": "Richie Adubato",
+    "playoff": "first_round"
+  },
+  {
+    "season": "1988-89",
+    "wins": 38,
+    "losses": 44,
+    "coach": "John MacLeod",
+    "playoff": "missed"
+  },
+  {
+    "season": "1987-88",
+    "wins": 53,
+    "losses": 29,
+    "coach": "John MacLeod",
+    "playoff": "conf_finals",
+    "note": "Finales de Conferencia (cayeron 4-3 ante los Lakers)"
+  },
+  {
+    "season": "1986-87",
+    "wins": 55,
+    "losses": 27,
+    "coach": "Dick Motta",
+    "playoff": "first_round",
+    "note": "Récord de franquicia en victorias hasta entonces"
+  },
+  {
+    "season": "1985-86",
+    "wins": 44,
+    "losses": 38,
+    "coach": "Dick Motta",
+    "playoff": "second_round"
+  },
+  {
+    "season": "1984-85",
+    "wins": 44,
+    "losses": 38,
+    "coach": "Dick Motta",
+    "playoff": "second_round"
+  },
+  {
+    "season": "1983-84",
+    "wins": 43,
+    "losses": 39,
+    "coach": "Dick Motta",
+    "playoff": "second_round",
+    "note": "Primera serie de playoffs ganada de la franquicia (vs. Seattle)"
+  },
+  {
+    "season": "1982-83",
+    "wins": 38,
+    "losses": 44,
+    "coach": "Dick Motta",
+    "playoff": "missed"
+  },
+  {
+    "season": "1981-82",
+    "wins": 28,
+    "losses": 54,
+    "coach": "Dick Motta",
+    "playoff": "missed"
+  },
+  {
+    "season": "1980-81",
+    "wins": 15,
+    "losses": 67,
+    "coach": "Dick Motta",
+    "playoff": "missed",
+    "note": "Temporada de expansión"
+  }
+]

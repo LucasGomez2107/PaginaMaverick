@@ -1,0 +1,61 @@
+{
+ "season": "1998-99",
+ "wins": 19,
+ "losses": 31,
+ "coach": "Don Nelson",
+ "playoff": "missed",
+ "note": "Temporada recortada por el cierre patronal (50 partidos); debut de Dirk Nowitzki",
+ "players": [
+  {
+   "name": "Dirk Nowitzki",
+   "slug": "dirk-nowitzki",
+   "pos": "PF",
+   "age": 20,
+   "gp": 47,
+   "gs": null,
+   "mpg": null,
+   "ppg": 8.2,
+   "rpg": 3.4,
+   "apg": null,
+   "spg": null,
+   "bpg": null,
+   "fgp": null,
+   "tpp": null,
+   "ftp": null
+  },
+  {
+   "name": "Steve Nash",
+   "slug": "steve-nash",
+   "pos": "PG",
+   "age": 24,
+   "gp": null,
+   "gs": null,
+   "mpg": null,
+   "ppg": 7.9,
+   "rpg": null,
+   "apg": 5.5,
+   "spg": null,
+   "bpg": null,
+   "fgp": null,
+   "tpp": null,
+   "ftp": null
+  },
+  {
+   "name": "Michael Finley",
+   "slug": "michael-finley",
+   "pos": "SG",
+   "age": 25,
+   "gp": null,
+   "gs": null,
+   "mpg": null,
+   "ppg": null,
+   "rpg": null,
+   "apg": null,
+   "spg": null,
+   "bpg": null,
+   "fgp": null,
+   "tpp": null,
+   "ftp": null
+  }
+ ]
+}

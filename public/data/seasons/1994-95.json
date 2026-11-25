@@ -1,0 +1,60 @@
+{
+ "season": "1994-95",
+ "wins": 36,
+ "losses": 46,
+ "coach": "Dick Motta",
+ "playoff": "missed",
+ "players": [
+  {
+   "name": "Jim Jackson",
+   "slug": "jim-jackson",
+   "pos": "SG",
+   "age": 24,
+   "gp": null,
+   "gs": null,
+   "mpg": null,
+   "ppg": 25.7,
+   "rpg": null,
+   "apg": null,
+   "spg": null,
+   "bpg": null,
+   "fgp": null,
+   "tpp": null,
+   "ftp": null
+  },
+  {
+   "name": "Jamal Mashburn",
+   "slug": "jamal-mashburn",
+   "pos": "SF",
+   "age": 22,
+   "gp": null,
+   "gs": null,
+   "mpg": null,
+   "ppg": 24.1,
+   "rpg": null,
+   "apg": null,
+   "spg": null,
+   "bpg": null,
+   "fgp": null,
+   "tpp": null,
+   "ftp": null
+  },
+  {
+   "name": "Jason Kidd",
+   "slug": "jason-kidd",
+   "pos": "PG",
+   "age": 21,
+   "gp": 79,
+   "gs": null,
+   "mpg": null,
+   "ppg": 11.7,
+   "rpg": 5.4,
+   "apg": 7.7,
+   "spg": null,
+   "bpg": null,
+   "fgp": null,
+   "tpp": null,
+   "ftp": null
+  }
+ ]
+}

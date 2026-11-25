@@ -1,0 +1,61 @@
+{
+ "season": "1996-97",
+ "wins": 24,
+ "losses": 58,
+ "coach": "Jim Cleamons",
+ "playoff": "missed",
+ "note": "Kidd fue traspasado a Phoenix en diciembre (llegó Michael Finley)",
+ "players": [
+  {
+   "name": "Michael Finley",
+   "slug": "michael-finley",
+   "pos": "SG",
+   "age": 23,
+   "gp": null,
+   "gs": null,
+   "mpg": null,
+   "ppg": null,
+   "rpg": null,
+   "apg": null,
+   "spg": null,
+   "bpg": null,
+   "fgp": null,
+   "tpp": null,
+   "ftp": null
+  },
+  {
+   "name": "Jim Jackson",
+   "slug": "jim-jackson",
+   "pos": "SG",
+   "age": 26,
+   "gp": null,
+   "gs": null,
+   "mpg": null,
+   "ppg": null,
+   "rpg": null,
+   "apg": null,
+   "spg": null,
+   "bpg": null,
+   "fgp": null,
+   "tpp": null,
+   "ftp": null
+  },
+  {
+   "name": "Jamal Mashburn",
+   "slug": "jamal-mashburn",
+   "pos": "SF",
+   "age": 24,
+   "gp": null,
+   "gs": null,
+   "mpg": null,
+   "ppg": null,
+   "rpg": null,
+   "apg": null,
+   "spg": null,
+   "bpg": null,
+   "fgp": null,
+   "tpp": null,
+   "ftp": null
+  }
+ ]
+}

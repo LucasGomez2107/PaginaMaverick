@@ -1,0 +1,107 @@
+# 2019-20|43|32|Rick Carlisle|first_round|Temporada interrumpida por la COVID-19 (75 partidos, burbuja de Orlando); cayeron 4-2 ante los Clippers
+Luka Dončić|PG|20|61|61|33.6|28.8|9.4|8.8|1.0|0.2|0.463|0.316|0.758
+Kristaps Porziņģis|PF|24|57|||20.4|9.5|||||||
+Tim Hardaway Jr.|SG|27|||||||||||||
+Seth Curry|SG|29|||||||||||||
+Jalen Brunson|PG|23|||||||||||||
+Dwight Powell|C|28|||||||||||||
+Maxi Kleber|PF|28|||||||||||||
+Dorian Finney-Smith|SF|26|||||||||||||
+Delon Wright|SG|27|||||||||||||
+# 2020-21|42|30|Rick Carlisle|first_round|Temporada de 72 partidos; cayeron 4-3 ante los Clippers
+Luka Dončić|PG|21|66|66|34.3|27.7|8.0|8.6|1.0|0.5|0.479|0.350|0.730
+Kristaps Porziņģis|PF|25|43|||20.1|||||||
+Tim Hardaway Jr.|SG|28|||||||||||||
+Jalen Brunson|PG|24|||||||||||||
+Josh Richardson|SG|27|||||||||||||
+Dorian Finney-Smith|SF|27|||||||||||||
+Maxi Kleber|PF|29|||||||||||||
+Dwight Powell|C|29|||||||||||||
+Willie Cauley-Stein|C|||||||||||||
+# 2021-22|52|30|Jason Kidd|conf_finals|Primer año de Jason Kidd; Finales del Oeste (cayeron 4-1 ante Golden State)
+Luka Dončić|PG|22|65|65|35.4|28.4|9.1|8.7|1.2|0.6|0.457|0.353|0.744
+Jalen Brunson|PG|25|79|||16.3|4.0|4.8|||||
+Kristaps Porziņģis|PF|26|||||||||||||
+Spencer Dinwiddie|PG|28|||||||||||||
+Dorian Finney-Smith|SF|28|||||||||||||
+Reggie Bullock|SF|30|||||||||||||
+Maxi Kleber|PF|30|||||||||||||
+Dwight Powell|C|30|||||||||||||
+Davis Bertāns|PF|29|||||||||||||
+Tim Hardaway Jr.|SG|29|||||||||||||
+# 2022-23|38|44|Jason Kidd|missed|Kyrie Irving llegó vía traspaso en febrero
+Luka Dončić|PG|23|66|66|36.2|32.4|8.6|8.0|1.4|0.5|0.496|0.342|0.742
+Kyrie Irving|PG|30|20|||||||||||
+Christian Wood|PF|27|62|||16.6||||||||
+Tim Hardaway Jr.|SG|30|||||||||||||
+Spencer Dinwiddie|PG|29|||||||||||||
+Reggie Bullock|SF|31|||||||||||||
+Maxi Kleber|PF|31|||||||||||||
+Dwight Powell|C|31|||||||||||||
+Josh Green|SG|22|||||||||||||
+JaVale McGee|C|35|||||||||||||
+Jaden Hardy|SG|20|||||||||||||
+# 2023-24|50|32|Jason Kidd|finals|Finales de la NBA (cayeron 4-1 ante Boston)
+Luka Dončić|PG|24|70|70|37.5|33.9|9.2|9.8|1.4|0.5|0.487|0.382|0.786
+Kyrie Irving|PG|31|58|58||25.6|5.0|5.2|||||
+Dereck Lively II|C|21|55|||8.8|8.4|||1.4|||
+P.J. Washington|PF|25|||||||||||||
+Daniel Gafford|C|25|||||||||||||
+Derrick Jones Jr.|SF|26|||||||||||||
+Tim Hardaway Jr.|SG|31|||||||||||||
+Josh Green|SG|23|||||||||||||
+Dante Exum|SG|28|||||||||||||
+Maxi Kleber|PF|32|||||||||||||
+Dwight Powell|C|32|||||||||||||
+Grant Williams|PF|25|||||||||||||
+Jaden Hardy|SG|21|||||||||||||
+Seth Curry|SG|33|||||||||||||
+# 2024-25|39|43|Jason Kidd|missed|Luka Dončić traspasado a los Lakers el 2 de febrero (llegó Anthony Davis); eliminados en el play-in
+Kyrie Irving|PG|32|50|||||||||||
+Luka Dončić|PG|25|22|22||||||||||
+Anthony Davis|PF|31|||||||||||||
+Klay Thompson|SG|34|||||||||||||
+P.J. Washington|PF|26|||||||||||||
+Dereck Lively II|C|22|||||||||||||
+Daniel Gafford|C|26|||||||||||||
+Naji Marshall|SF|27|||||||||||||
+Max Christie|SG|21|||||||||||||
+Jaden Hardy|SG|22|||||||||||||
+Dante Exum|SG|29|||||||||||||
+Olivier-Maxence Prosper|SF|22|||||||||||||
+Brandon Williams|PG|25|||||||||||||
+Dwight Powell|C|33|||||||||||||
+# 2025-26|26|56|Jason Kidd|missed|datos parciales
+Cooper Flagg|SF|19|||||||||||||
+Anthony Davis|PF|32|||||||||||||
+Kyrie Irving|PG|33|||||||||||||
+Klay Thompson|SG|35|||||||||||||
+P.J. Washington|PF|27|||||||||||||
+Dereck Lively II|C|23|||||||||||||
+Daniel Gafford|C|27|||||||||||||
+D'Angelo Russell|PG|29|||||||||||||
+Naji Marshall|SF|28|||||||||||||
+Max Christie|SG|22|||||||||||||
+Dante Exum|SG|30|||||||||||||
+Caleb Martin|SF|30|||||||||||||
+Jaden Hardy|SG|23|||||||||||||
+Brandon Williams|PG|26|||||||||||||
+Olivier-Maxence Prosper|SF|23|||||||||||||
+Ryan Nembhard|PG|22|||||||||||||
+# 2026-27|||Jason Kidd|in_progress|temporada en curso — actualizar con el importador
+Cooper Flagg|SF||||||||||||||
+Anthony Davis|PF||||||||||||||
+Kyrie Irving|PG||||||||||||||
+Klay Thompson|SG||||||||||||||
+P.J. Washington|PF||||||||||||||
+Dereck Lively II|C||||||||||||||
+Daniel Gafford|C||||||||||||||
+Max Christie|SG||||||||||||||
+Naji Marshall|SF||||||||||||||
+D'Angelo Russell|PG||||||||||||||
+Dante Exum|SG||||||||||||||
+Caleb Martin|SF||||||||||||||
+Jaden Hardy|SG||||||||||||||
+Brandon Williams|PG||||||||||||||
+Olivier-Maxence Prosper|SF||||||||||||||
+Ryan Nembhard|PG||||||||||||||

@@ -1,0 +1,94 @@
+# 2010-11|57|25|Rick Carlisle|champion|Primer campeonato de la franquicia (4-2 a Miami en las Finales)
+Dirk Nowitzki|PF|32|73|||23.0|7.0|2.6||||||
+Jason Terry|SG|33||||15.8||||||||
+Tyson Chandler|C|28|79|||10.1|9.4|||||||
+Shawn Marion|SF|32|||||||||||||
+Jason Kidd|PG|37|||||||||||||
+J.J. Barea|PG|26||||9.5||||||||
+Caron Butler|SF|30|||||||||||||
+Peja Stojaković|SF|33|||||||||||||
+Brendan Haywood|C|31|||||||||||||
+Rodrigue Beaubois|PG|23|||||||||||||
+DeShawn Stevenson|SG|||||||||||||
+Brian Cardinal|PF|||||||||||||
+# 2011-12|36|30|Rick Carlisle|first_round|Temporada recortada por el cierre patronal (66 partidos); barridos 4-0 por Oklahoma City
+Dirk Nowitzki|PF|33|62|||21.6|6.8|2.2||||||
+Jason Terry|SG|34||||15.1||||||||
+Vince Carter|SG|35||||13.4||||||||
+Shawn Marion|SF|33|||||||||||||
+Jason Kidd|PG|38|||||||||||||
+Lamar Odom|PF|32|||||||||||||
+Brendan Haywood|C|32|||||||||||||
+Delonte West|PG|||||||||||||
+Brandan Wright|PF|||||||||||||
+Rodrigue Beaubois|PG|24|||||||||||||
+Yi Jianlian|PF|||||||||||||
+Brian Cardinal|PF|||||||||||||
+# 2012-13|41|41|Rick Carlisle|missed|Primera vez sin playoffs desde 2000
+Dirk Nowitzki|PF|34|53|||17.3|6.8|2.5||||||
+Vince Carter|SG|36|||||||||||||
+Shawn Marion|SF|34|||||||||||||
+Darren Collison|PG|||||||||||||
+O.J. Mayo|SG|||||||||||||
+Elton Brand|PF|||||||||||||
+# 2013-14|49|33|Rick Carlisle|first_round|Cayeron 4-3 ante San Antonio
+Dirk Nowitzki|PF|35|80|||21.7|6.2|2.7||||||
+Monta Ellis|SG|28||||19.0||||||||
+Jose Calderon|PG|32|||||||||||||
+Vince Carter|SG|37|||||||||||||
+Shawn Marion|SF|35|||||||||||||
+Samuel Dalembert|C|||||||||||||
+Brandan Wright|PF|||||||||||||
+Devin Harris|PG|||||||||||||
+# 2014-15|50|32|Rick Carlisle|first_round|Cayeron 4-1 ante Houston
+Dirk Nowitzki|PF|36|77|||17.3|6.5||||||||
+Monta Ellis|SG|29||||18.9||||||||
+Chandler Parsons|SF|26||||15.7||||||||
+Tyson Chandler|C|32||||10.3|11.5|||||||
+Rajon Rondo|PG|28|||||||||||||
+Jose Calderon|PG|33|||||||||||||
+Al-Farouq Aminu|SF|||||||||||||
+Devin Harris|PG|||||||||||||
+J.J. Barea|PG|30|||||||||||||
+# 2015-16|42|40|Rick Carlisle|first_round|Cayeron 4-1 ante Oklahoma City
+Dirk Nowitzki|PF|37|75|||18.3|6.8|1.8||||||
+Wesley Matthews|SG|29|||||||||||||
+Deron Williams|PG|31|||||||||||||
+Chandler Parsons|SF|27|||||||||||||
+Zaza Pachulia|C|||||||||||||
+Raymond Felton|PG|||||||||||||
+J.J. Barea|PG|31|||||||||||||
+Devin Harris|PG|||||||||||||
+# 2016-17|33|49|Rick Carlisle|missed|
+Harrison Barnes|SF|24|||||||||||||
+Dirk Nowitzki|PF|38|54|||14.2|6.5|1.5||||||
+Wesley Matthews|SG|30|||||||||||||
+Seth Curry|SG|26|||||||||||||
+Yogi Ferrell|PG|23|||||||||||||
+Deron Williams|PG|32|||||||||||||
+J.J. Barea|PG|32|||||||||||||
+Nerlens Noel|C|||||||||||||
+Dwight Powell|PF|25|||||||||||||
+# 2017-18|24|58|Rick Carlisle|missed|Selección de Dennis Smith Jr. y Dirk supera a Wilt Chamberlain en puntos de por vida
+Harrison Barnes|SF|25|||||||||||||
+Dirk Nowitzki|PF|39|77|||12.0|5.7|1.6||||||
+Wesley Matthews|SG|31|||||||||||||
+Dennis Smith Jr.|PG|20|||||||||||||
+Seth Curry|SG|27|||||||||||||
+Dwight Powell|PF|26|||||||||||||
+Maxi Kleber|PF|26|||||||||||||
+J.J. Barea|PG|33|||||||||||||
+Doug McDermott|SF|||||||||||||
+Yogi Ferrell|PG|24|||||||||||||
+# 2018-19|33|49|Rick Carlisle|missed|Rookie del Año Luka Dončić; última temporada de Dirk Nowitzki
+Luka Dončić|PG|19|72|72|32.2|21.2|7.8|6.0|1.1|0.3|0.427|0.327|0.713
+Dirk Nowitzki|PF|40|51|||7.3|4.7||||||
+Harrison Barnes|SF|26|||||||||||||
+Dennis Smith Jr.|PG|21|||||||||||||
+Jalen Brunson|PG|22|||||||||||||
+Dwight Powell|PF|27|||||||||||||
+Maxi Kleber|PF|27|||||||||||||
+Wesley Matthews|SG|32|||||||||||||
+J.J. Barea|PG|34|||||||||||||
+DeAndre Jordan|C|30|||||||||||||
+Kristaps Porziņģis|PF|23|||||||||||||

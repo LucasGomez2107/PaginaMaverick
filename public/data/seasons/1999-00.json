@@ -1,0 +1,60 @@
+{
+ "season": "1999-00",
+ "wins": 40,
+ "losses": 42,
+ "coach": "Don Nelson",
+ "playoff": "missed",
+ "players": [
+  {
+   "name": "Michael Finley",
+   "slug": "michael-finley",
+   "pos": "SG",
+   "age": 26,
+   "gp": null,
+   "gs": null,
+   "mpg": null,
+   "ppg": 22.4,
+   "rpg": null,
+   "apg": null,
+   "spg": null,
+   "bpg": null,
+   "fgp": null,
+   "tpp": null,
+   "ftp": null
+  },
+  {
+   "name": "Dirk Nowitzki",
+   "slug": "dirk-nowitzki",
+   "pos": "PF",
+   "age": 21,
+   "gp": 82,
+   "gs": null,
+   "mpg": null,
+   "ppg": 17.5,
+   "rpg": 6.5,
+   "apg": 2.5,
+   "spg": null,
+   "bpg": null,
+   "fgp": null,
+   "tpp": null,
+   "ftp": null
+  },
+  {
+   "name": "Steve Nash",
+   "slug": "steve-nash",
+   "pos": "PG",
+   "age": 25,
+   "gp": null,
+   "gs": null,
+   "mpg": null,
+   "ppg": null,
+   "rpg": null,
+   "apg": null,
+   "spg": null,
+   "bpg": null,
+   "fgp": null,
+   "tpp": null,
+   "ftp": null
+  }
+ ]
+}

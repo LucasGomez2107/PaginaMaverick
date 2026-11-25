@@ -1,0 +1,61 @@
+{
+ "season": "1992-93",
+ "wins": 11,
+ "losses": 71,
+ "coach": "Gar Heard",
+ "playoff": "missed",
+ "note": "Peor récord de la historia de la franquicia (Adubato fue relevado durante la temporada)",
+ "players": [
+  {
+   "name": "Jim Jackson",
+   "slug": "jim-jackson",
+   "pos": "SG",
+   "age": 22,
+   "gp": null,
+   "gs": null,
+   "mpg": null,
+   "ppg": null,
+   "rpg": null,
+   "apg": null,
+   "spg": null,
+   "bpg": null,
+   "fgp": null,
+   "tpp": null,
+   "ftp": null
+  },
+  {
+   "name": "Derek Harper",
+   "slug": "derek-harper",
+   "pos": "PG",
+   "age": 31,
+   "gp": null,
+   "gs": null,
+   "mpg": null,
+   "ppg": null,
+   "rpg": null,
+   "apg": null,
+   "spg": null,
+   "bpg": null,
+   "fgp": null,
+   "tpp": null,
+   "ftp": null
+  },
+  {
+   "name": "Fat Lever",
+   "slug": "fat-lever",
+   "pos": "PG",
+   "age": 32,
+   "gp": null,
+   "gs": null,
+   "mpg": null,
+   "ppg": null,
+   "rpg": null,
+   "apg": null,
+   "spg": null,
+   "bpg": null,
+   "fgp": null,
+   "tpp": null,
+   "ftp": null
+  }
+ ]
+}

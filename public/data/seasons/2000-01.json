@@ -1,0 +1,61 @@
+{
+ "season": "2000-01",
+ "wins": 53,
+ "losses": 29,
+ "coach": "Don Nelson",
+ "playoff": "second_round",
+ "note": "Primera clasificación a playoffs desde 1990 (venció a Utah 3-2, cayó ante San Antonio)",
+ "players": [
+  {
+   "name": "Michael Finley",
+   "slug": "michael-finley",
+   "pos": "SG",
+   "age": 27,
+   "gp": null,
+   "gs": null,
+   "mpg": null,
+   "ppg": 22.6,
+   "rpg": null,
+   "apg": null,
+   "spg": null,
+   "bpg": null,
+   "fgp": null,
+   "tpp": null,
+   "ftp": null
+  },
+  {
+   "name": "Dirk Nowitzki",
+   "slug": "dirk-nowitzki",
+   "pos": "PF",
+   "age": 22,
+   "gp": 82,
+   "gs": null,
+   "mpg": null,
+   "ppg": 21.8,
+   "rpg": 9.2,
+   "apg": 2.1,
+   "spg": null,
+   "bpg": null,
+   "fgp": null,
+   "tpp": null,
+   "ftp": null
+  },
+  {
+   "name": "Steve Nash",
+   "slug": "steve-nash",
+   "pos": "PG",
+   "age": 26,
+   "gp": null,
+   "gs": null,
+   "mpg": null,
+   "ppg": 15.6,
+   "rpg": null,
+   "apg": 7.3,
+   "spg": null,
+   "bpg": null,
+   "fgp": null,
+   "tpp": null,
+   "ftp": null
+  }
+ ]
+}

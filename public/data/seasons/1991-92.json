@@ -1,0 +1,60 @@
+{
+ "season": "1991-92",
+ "wins": 22,
+ "losses": 60,
+ "coach": "Richie Adubato",
+ "playoff": "missed",
+ "players": [
+  {
+   "name": "Rolando Blackman",
+   "slug": "rolando-blackman",
+   "pos": "SG",
+   "age": 32,
+   "gp": null,
+   "gs": null,
+   "mpg": null,
+   "ppg": null,
+   "rpg": null,
+   "apg": null,
+   "spg": null,
+   "bpg": null,
+   "fgp": null,
+   "tpp": null,
+   "ftp": null
+  },
+  {
+   "name": "Derek Harper",
+   "slug": "derek-harper",
+   "pos": "PG",
+   "age": 30,
+   "gp": null,
+   "gs": null,
+   "mpg": null,
+   "ppg": null,
+   "rpg": null,
+   "apg": null,
+   "spg": null,
+   "bpg": null,
+   "fgp": null,
+   "tpp": null,
+   "ftp": null
+  },
+  {
+   "name": "Fat Lever",
+   "slug": "fat-lever",
+   "pos": "PG",
+   "age": 31,
+   "gp": null,
+   "gs": null,
+   "mpg": null,
+   "ppg": null,
+   "rpg": null,
+   "apg": null,
+   "spg": null,
+   "bpg": null,
+   "fgp": null,
+   "tpp": null,
+   "ftp": null
+  }
+ ]
+}

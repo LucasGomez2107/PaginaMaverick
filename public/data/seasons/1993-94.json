@@ -1,0 +1,43 @@
+{
+ "season": "1993-94",
+ "wins": 13,
+ "losses": 69,
+ "coach": "Quinn Buckner",
+ "playoff": "missed",
+ "players": [
+  {
+   "name": "Jamal Mashburn",
+   "slug": "jamal-mashburn",
+   "pos": "SF",
+   "age": 21,
+   "gp": null,
+   "gs": null,
+   "mpg": null,
+   "ppg": 19.2,
+   "rpg": null,
+   "apg": null,
+   "spg": null,
+   "bpg": null,
+   "fgp": null,
+   "tpp": null,
+   "ftp": null
+  },
+  {
+   "name": "Jim Jackson",
+   "slug": "jim-jackson",
+   "pos": "SG",
+   "age": 23,
+   "gp": null,
+   "gs": null,
+   "mpg": null,
+   "ppg": null,
+   "rpg": null,
+   "apg": null,
+   "spg": null,
+   "bpg": null,
+   "fgp": null,
+   "tpp": null,
+   "ftp": null
+  }
+ ]
+}

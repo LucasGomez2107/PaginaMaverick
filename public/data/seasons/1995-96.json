@@ -1,0 +1,60 @@
+{
+ "season": "1995-96",
+ "wins": 26,
+ "losses": 56,
+ "coach": "Dick Motta",
+ "playoff": "missed",
+ "players": [
+  {
+   "name": "Jason Kidd",
+   "slug": "jason-kidd",
+   "pos": "PG",
+   "age": 22,
+   "gp": 81,
+   "gs": null,
+   "mpg": null,
+   "ppg": 16.6,
+   "rpg": 6.8,
+   "apg": 9.7,
+   "spg": null,
+   "bpg": null,
+   "fgp": null,
+   "tpp": null,
+   "ftp": null
+  },
+  {
+   "name": "Jim Jackson",
+   "slug": "jim-jackson",
+   "pos": "SG",
+   "age": 25,
+   "gp": null,
+   "gs": null,
+   "mpg": null,
+   "ppg": null,
+   "rpg": null,
+   "apg": null,
+   "spg": null,
+   "bpg": null,
+   "fgp": null,
+   "tpp": null,
+   "ftp": null
+  },
+  {
+   "name": "Jamal Mashburn",
+   "slug": "jamal-mashburn",
+   "pos": "SF",
+   "age": 23,
+   "gp": null,
+   "gs": null,
+   "mpg": null,
+   "ppg": null,
+   "rpg": null,
+   "apg": null,
+   "spg": null,
+   "bpg": null,
+   "fgp": null,
+   "tpp": null,
+   "ftp": null
+  }
+ ]
+}
