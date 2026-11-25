@@ -162,14 +162,16 @@ export function getGame(id) {
   return gameView(db.prepare(`${GAME_SELECT} WHERE g.id = ?`).get(Number(id)));
 }
 
-export function listGames({ status = 'all', limit = 50 } = {}) {
-  let sql = GAME_SELECT;
+export function listGames({ status = 'all', limit = 50, from = null, to = null, order = null } = {}) {
+  const where = [];
   const args = [];
-  if (status === 'scheduled') sql += ` WHERE g.status = 'scheduled' ORDER BY g.date ASC`;
-  else if (status === 'final') sql += ` WHERE g.status = 'final' ORDER BY g.date DESC`;
-  else if (status === 'live') sql += ` WHERE g.status = 'live' ORDER BY g.date DESC`;
-  else sql += ` ORDER BY g.date DESC`;
-  sql += ' LIMIT ?';
+  if (['scheduled', 'final', 'live'].includes(status)) { where.push('g.status = ?'); args.push(status); }
+  if (from) { where.push('g.date >= ?'); args.push(from); }
+  if (to) { where.push('g.date < ?'); args.push(to); }
+  const dir = order === 'asc' || order === 'desc' ? order : (status === 'scheduled' ? 'asc' : 'desc');
+  let sql = GAME_SELECT;
+  if (where.length) sql += ' WHERE ' + where.join(' AND ');
+  sql += ` ORDER BY g.date ${dir.toUpperCase()} LIMIT ?`;
   args.push(limit);
   return db.prepare(sql).all(...args).map(gameView);
 }
@@ -208,22 +210,44 @@ export function scoreGame(gameId) {
 }
 
 // ---------- roster ----------
+// Real Dallas roster as listed by ESPN (Nov 2026). Replaced automatically by the ESPN sync.
 export const DEFAULT_ROSTER = [
-  'Cooper Flagg', 'Anthony Davis', 'Kyrie Irving', 'Klay Thompson', 'P.J. Washington', 'Dereck Lively II',
-  'Daniel Gafford', 'Max Christie', 'Naji Marshall', "D'Angelo Russell", 'Dante Exum', 'Caleb Martin',
-  'Jaden Hardy', 'Brandon Williams', 'Olivier-Maxence Prosper', 'Ryan Nembhard',
+  'Cooper Flagg', 'Kyrie Irving', 'P.J. Washington', 'Naji Marshall', 'Daniel Gafford', 'Dereck Lively II',
+  'Max Christie', 'Santi Aldama', 'Zaccharie Risacher', 'Caleb Martin', 'Marcus Sasser', 'Walter Clayton Jr.',
+  'Jett Howard', 'Moussa Cisse', 'Morez Johnson Jr.', 'Sergio de Larrea', 'Tarik Biberovic', 'Tobi Lawal',
 ];
+try { db.exec('ALTER TABLE roster ADD COLUMN info TEXT'); } catch { /* column exists */ }
+db.exec('CREATE TABLE IF NOT EXISTS kv (key TEXT PRIMARY KEY, value TEXT)');
+export function kvGet(key) {
+  const r = db.prepare('SELECT value FROM kv WHERE key = ?').get(key);
+  return r ? parseJson(r.value, null) : null;
+}
+export function kvSet(key, value) {
+  db.prepare('INSERT INTO kv (key, value) VALUES (?, ?) ON CONFLICT(key) DO UPDATE SET value = excluded.value')
+    .run(key, JSON.stringify(value));
+}
+
 export function getRoster() {
   return db.prepare('SELECT name FROM roster ORDER BY pos').all().map(r => r.name);
 }
-export function setRoster(players) {
+/** Full roster: [{name, ...info}] where info comes from ESPN (jersey, position, height, stats...) when available. */
+export function getRosterDetails() {
+  return db.prepare('SELECT name, info FROM roster ORDER BY pos').all()
+    .map(r => ({ ...(parseJson(r.info, {}) || {}), name: r.name }));
+}
+/** players: array of names or of {name, ...info}. */
+export function setRoster(players, { source = 'manual' } = {}) {
   tx(() => {
     db.exec('DELETE FROM roster');
-    const ins = db.prepare('INSERT INTO roster (pos, name) VALUES (?, ?)');
-    players.forEach((p, i) => ins.run(i, p));
+    const ins = db.prepare('INSERT INTO roster (pos, name, info) VALUES (?, ?, ?)');
+    players.forEach((p, i) => {
+      if (typeof p === 'string') ins.run(i, p, null);
+      else { const { name, ...info } = p; ins.run(i, name, JSON.stringify(info)); }
+    });
   });
+  kvSet('roster_meta', { ...(kvGet('roster_meta') || {}), source, updated_at: nowIso() });
 }
-if (db.prepare('SELECT COUNT(*) AS n FROM roster').get().n === 0) setRoster(DEFAULT_ROSTER);
+if (db.prepare('SELECT COUNT(*) AS n FROM roster').get().n === 0) setRoster(DEFAULT_ROSTER, { source: 'default' });
 
 export function cleanupSessions() {
   db.prepare('DELETE FROM sessions WHERE expires_at < ?').run(nowIso());

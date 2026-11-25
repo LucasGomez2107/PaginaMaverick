@@ -1,6 +1,7 @@
 // ESPN public API: Dallas teams' last results + Mavericks schedule sync.
 // The API may be unreachable: every function here is defensive and never throws to callers.
-import { db, nowIso, seasonFor, scoreGame } from './db.js';
+import { db, nowIso, seasonFor, scoreGame, setRoster, kvGet, kvSet } from './db.js';
+import { deleteDemo } from './seed.js';
 
 const BASE = 'https://site.api.espn.com/apis/site/v2/sports';
 const TIMEOUT_MS = 8000;
@@ -232,6 +233,11 @@ async function doSync() {
     } catch (e) { lastErr = e.message; }
   }
   if (!byId.size) return { ok: false, imported: 0, error: lastErr || 'no events' };
+  // Real data arrived: the demo rows (fake games, diary entry, Dallas results) would only confuse users.
+  if (db.prepare('SELECT COUNT(*) AS n FROM games WHERE demo = 1').get().n > 0) {
+    const removed = deleteDemo();
+    console.log(`[espn] real schedule found, demo data removed (${removed.games} games)`);
+  }
 
   let imported = 0;
   const findStmt = db.prepare('SELECT * FROM games WHERE espn_id = ?');
@@ -285,11 +291,81 @@ async function doSync() {
   return { ok: true, imported };
 }
 
+// ---------- roster (players + current-season averages) ----------
+const ATHLETE_URL = id => `https://site.api.espn.com/apis/common/v3/sports/basketball/nba/athletes/${encodeURIComponent(id)}/overview`;
+const numOrNull = v => { const n = parseFloat(v); return Number.isFinite(n) ? n : null; };
+
+function seasonAverages(overview) {
+  const st = overview?.statistics;
+  const split = (st?.splits || []).find(x => /regular season/i.test(x.displayName || '')) || st?.splits?.[0];
+  if (!st || !split || !Array.isArray(split.stats)) return null;
+  const at = name => { const i = (st.names || []).indexOf(name); return i < 0 ? null : numOrNull(split.stats[i]); };
+  const pct = name => { const v = at(name); return v == null ? null : Math.round(v * 10) / 1000; };
+  return {
+    gp: at('gamesPlayed'), mpg: at('avgMinutes'), ppg: at('avgPoints'), rpg: at('avgRebounds'), apg: at('avgAssists'),
+    spg: at('avgSteals'), bpg: at('avgBlocks'), fgp: pct('fieldGoalPct'), tpp: pct('threePointPct'), ftp: pct('freeThrowPct'),
+  };
+}
+
+function athleteInfo(a) {
+  const inj = (a.injuries || [])[0];
+  const heightIn = numOrNull(a.height);
+  const weightLb = numOrNull(a.weight);
+  return {
+    name: a.displayName || a.fullName,
+    espn_id: String(a.id),
+    jersey: a.jersey ?? null,
+    position: a.position?.abbreviation || null,
+    position_name: a.position?.displayName || null,
+    height_cm: heightIn ? Math.round(heightIn * 2.54) : null,
+    weight_kg: weightLb ? Math.round(weightLb * 0.4536) : null,
+    age: a.age ?? null,
+    birth_date: a.dateOfBirth || null,
+    country: a.birthPlace?.country || null,
+    city: a.birthPlace?.city || null,
+    college: a.college?.name || null,
+    experience: a.experience?.years ?? null,
+    injury: inj ? { status: inj.status || null, detail: inj.details?.type || inj.shortComment || null } : null,
+    stats: null,
+  };
+}
+
+let rosterSyncing = null;
+export function syncRoster() {
+  if (rosterSyncing) return rosterSyncing;
+  rosterSyncing = doRosterSync().catch(e => ({ ok: false, error: e.message })).finally(() => { rosterSyncing = null; });
+  return rosterSyncing;
+}
+
+async function doRosterSync() {
+  let data;
+  try { data = await fetchJson(`${BASE}/basketball/nba/teams/${MAVS.abbr}/roster`, { useCache: false }); }
+  catch (e) { return { ok: false, error: e.message }; }
+  const athletes = Array.isArray(data?.athletes) ? data.athletes : [];
+  if (athletes.length < 8) return { ok: false, error: 'roster vacío' };
+  const players = athletes.map(athleteInfo).filter(p => p.name);
+  // Current-season averages, a few requests at a time.
+  for (let i = 0; i < players.length; i += 4) {
+    await Promise.all(players.slice(i, i + 4).map(async p => {
+      try { p.stats = seasonAverages(await fetchJson(ATHLETE_URL(p.espn_id), { useCache: false })); } catch { /* keep null */ }
+    }));
+  }
+  players.sort((a, b) => (b.stats?.ppg ?? -1) - (a.stats?.ppg ?? -1));
+  const c = (data.coach || [])[0];
+  const coach = c ? `${c.firstName || ''} ${c.lastName || ''}`.trim() : null;
+  setRoster(players, { source: 'espn' });
+  kvSet('roster_meta', { ...(kvGet('roster_meta') || {}), coach, season: data.season?.displayName || null });
+  return { ok: true, players: players.length };
+}
+
 export function startSyncLoop() {
   if (process.env.ESPN_SYNC === '0') return;
   const run = () => syncMavs().then(r => {
     if (r.ok) console.log(`[espn] sync ok, ${r.imported} game(s) imported/updated`);
   }).catch(() => {});
-  setTimeout(run, 1000).unref();
-  setInterval(run, CACHE_MS).unref();
+  const runRoster = () => syncRoster().then(r => {
+    if (r.ok) console.log(`[espn] roster ok, ${r.players} player(s)`);
+  }).catch(() => {});
+  setTimeout(() => { run(); runRoster(); }, 1000).unref();
+  setInterval(() => { run(); runRoster(); }, CACHE_MS).unref();
 }

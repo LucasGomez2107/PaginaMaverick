@@ -3,7 +3,7 @@ import { t, registerStrings, el, api, getLang, setLang, LANGS, getUser, setUser,
 
 registerStrings({
   es: {
-    'nav.home': 'Inicio', 'nav.stats': 'Estadísticas', 'nav.forum': 'Foro', 'nav.diary': 'Diario', 'nav.prode': 'Prode',
+    'nav.home': 'Inicio', 'nav.roster': 'Roster', 'nav.stats': 'Estadísticas', 'nav.forum': 'Foro', 'nav.diary': 'Diario', 'nav.prode': 'Prode',
     'nav.tateti': 'Tateti', 'nav.guess': 'Adiviná', 'nav.ranking': 'Ranking', 'nav.admin': 'Admin', 'nav.menu': 'Menú', 'nav.main': 'Navegación principal',
     'layout.tagline': 'Mavs desde Sudamérica', 'layout.ticker': 'Dallas día a día', 'layout.follow': 'Seguinos en X', 'layout.followSub': '@MavSudamerica',
     'layout.disclaimer': 'Sitio de fans no oficial, sin afiliación con los Dallas Mavericks ni la NBA.',
@@ -11,7 +11,7 @@ registerStrings({
     'layout.tbd': 'Sin resultado', 'layout.profile': 'Mi perfil',
   },
   en: {
-    'nav.home': 'Home', 'nav.stats': 'Stats', 'nav.forum': 'Forum', 'nav.diary': 'Diary', 'nav.prode': 'Prode',
+    'nav.home': 'Home', 'nav.roster': 'Roster', 'nav.stats': 'Stats', 'nav.forum': 'Forum', 'nav.diary': 'Diary', 'nav.prode': 'Prode',
     'nav.tateti': 'Tic-tac-toe', 'nav.guess': 'Guess', 'nav.ranking': 'Ranking', 'nav.admin': 'Admin', 'nav.menu': 'Menu', 'nav.main': 'Main navigation',
     'layout.tagline': 'Mavs from South America', 'layout.ticker': 'Dallas day by day', 'layout.follow': 'Follow us on X', 'layout.followSub': '@MavSudamerica',
     'layout.disclaimer': 'Unofficial fan site, not affiliated with the Dallas Mavericks or the NBA.',
@@ -19,7 +19,7 @@ registerStrings({
     'layout.tbd': 'No result', 'layout.profile': 'My profile',
   },
   pt: {
-    'nav.home': 'Início', 'nav.stats': 'Estatísticas', 'nav.forum': 'Fórum', 'nav.diary': 'Diário', 'nav.prode': 'Bolão',
+    'nav.home': 'Início', 'nav.roster': 'Elenco', 'nav.stats': 'Estatísticas', 'nav.forum': 'Fórum', 'nav.diary': 'Diário', 'nav.prode': 'Bolão',
     'nav.tateti': 'Jogo da velha', 'nav.guess': 'Adivinhe', 'nav.ranking': 'Ranking', 'nav.admin': 'Admin', 'nav.menu': 'Menu', 'nav.main': 'Navegação principal',
     'layout.tagline': 'Mavs da América do Sul', 'layout.ticker': 'Dallas dia a dia', 'layout.follow': 'Siga-nos no X', 'layout.followSub': '@MavSudamerica',
     'layout.disclaimer': 'Site de fãs não oficial, sem afiliação com os Dallas Mavericks nem com a NBA.',
@@ -29,7 +29,7 @@ registerStrings({
 });
 
 const NAV = [
-  ['/', 'nav.home'], ['/stats', 'nav.stats'], ['/forum', 'nav.forum'], ['/diary', 'nav.diary'],
+  ['/', 'nav.home'], ['/roster', 'nav.roster'], ['/stats', 'nav.stats'], ['/forum', 'nav.forum'], ['/diary', 'nav.diary'],
   ['/prode', 'nav.prode'], ['/tateti', 'nav.tateti'], ['/guess', 'nav.guess'], ['/ranking', 'nav.ranking'],
 ];
 

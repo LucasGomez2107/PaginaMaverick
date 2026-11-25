@@ -26,3 +26,8 @@
 .fo-note { font-size: .75rem; text-align: center; }
 @media (max-width: 640px) { .fo-comment.is-reply { margin-left: .75rem; } }
 .forum-page .stack > .kicker, .forum-page .fo-head > .kicker { align-self: flex-start; width: fit-content; }
+
+/* today's game */
+.fo-game.fo-today { outline: 3px solid var(--royal, #0064B1); outline-offset: 2px; }
+.fo-game-date.row { justify-content: space-between; align-items: center; }
+.badge-today { background: var(--royal, #0064B1); color: #fff; border-color: var(--royal, #0064B1); }

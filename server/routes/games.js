@@ -1,7 +1,7 @@
 import { Router } from 'express';
-import { db, nowIso, seasonFor, getGame, listGames, scoreGame, getRoster, setRoster } from '../db.js';
+import { db, nowIso, seasonFor, getGame, listGames, scoreGame, getRoster, setRoster, getRosterDetails, kvGet } from '../db.js';
 import { requireAdmin } from '../auth.js';
-import { syncMavs } from '../espn.js';
+import { syncMavs, syncRoster } from '../espn.js';
 import { deleteDemo } from '../seed.js';
 
 const r = Router();
@@ -70,7 +70,9 @@ function gameFields(body, partial) {
 r.get('/games', (req, res) => {
   const status = ['scheduled', 'final', 'live', 'all'].includes(req.query.status) ? req.query.status : 'all';
   const limit = Math.min(Math.max(parseInt(req.query.limit, 10) || 50, 1), 500);
-  res.json({ games: listGames({ status, limit }) });
+  const iso = v => { if (!v) return null; const d = new Date(v); return Number.isNaN(d.getTime()) ? null : d.toISOString(); };
+  const order = ['asc', 'desc'].includes(req.query.order) ? req.query.order : null;
+  res.json({ games: listGames({ status, limit, from: iso(req.query.from), to: iso(req.query.to), order }) });
 });
 
 r.get('/games/:id', (req, res) => {
@@ -121,8 +123,10 @@ r.delete('/games/:id', requireAdmin, (req, res) => {
 
 r.post('/admin/sync', requireAdmin, async (req, res, next) => {
   try {
-    const result = await syncMavs();
-    res.json(result.ok ? { ok: true, imported: result.imported } : { ok: false, imported: result.imported || 0, error: result.error });
+    const [result, roster] = await Promise.all([syncMavs(), syncRoster()]);
+    res.json(result.ok
+      ? { ok: true, imported: result.imported, roster: roster.ok ? roster.players : 0 }
+      : { ok: false, imported: result.imported || 0, error: result.error, roster: roster.ok ? roster.players : 0 });
   } catch (e) { next(e); }
 });
 
@@ -130,7 +134,11 @@ r.delete('/admin/demo', requireAdmin, (req, res) => {
   res.json({ ok: true, deleted: deleteDemo() });
 });
 
-r.get('/roster', (req, res) => res.json({ players: getRoster() }));
+r.get('/roster', (req, res) => {
+  const meta = kvGet('roster_meta') || {};
+  res.json({ players: getRoster(), details: getRosterDetails(), coach: meta.coach || null, season: meta.season || null,
+    source: meta.source || null, updated_at: meta.updated_at || null });
+});
 
 r.put('/roster', requireAdmin, (req, res) => {
   const { players } = req.body || {};

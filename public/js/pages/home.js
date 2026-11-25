@@ -1,4 +1,5 @@
 import { t, registerStrings, el, api, loadCSS, fmtDateTime, fmtDate, getUser } from '../core.js';
+import { miniCard } from './roster.js';
 
 registerStrings({
   es: {
@@ -74,7 +75,7 @@ function tile(href, num, title, desc) {
 export default {
   path: '/', titleKey: 'home.title',
   async render(container) {
-    loadCSS('/css/pages/home.css');
+    loadCSS('/css/pages/home.css'); loadCSS('/css/pages/roster.css');
     const stops = [];
     container.classList.add('home');
     container.append(el('section', { class: 'hero' },
@@ -89,6 +90,10 @@ export default {
     const diaryBox = el('div', { class: 'stack' });
     const topBox = el('div', { class: 'card' });
     container.append(el('div', { class: 'grid-2 match-row' }, nextBox, lastBox));
+    const rosterBox = el('div', { class: 'rs-strip', role: 'list' });
+    container.append(el('section', { class: 'stack home-roster' },
+      el('div', { class: 'row-between' }, el('h2', {}, t('roster.home')), el('a', { class: 'btn btn-ghost btn-sm', href: '#/roster' }, t('roster.all-link'))),
+      rosterBox));
     container.append(el('section', { class: 'tiles' },
       tile('#/stats', 'A', t('home.tStats'), t('home.tStatsD')), tile('#/tateti', 'B', t('home.tTateti'), t('home.tTatetiD')),
       tile('#/guess', 'C', t('home.tGuess'), t('home.tGuessD')), tile('#/ranking', 'D', t('home.tRanking'), t('home.tRankingD'))));
@@ -96,8 +101,13 @@ export default {
       el('section', { class: 'stack' }, el('h2', {}, t('home.diary')), diaryBox),
       el('section', { class: 'stack' }, el('h2', {}, t('home.top5')), topBox)));
 
-    const [nx, ls, di, lb] = await Promise.all([
-      first('/games?status=scheduled&limit=1'), first('/games?status=final&limit=1'), first('/diary?limit=3'), first('/prode/leaderboard')]);
+    const [nx, ls, di, lb, ro] = await Promise.all([
+      first('/games?status=scheduled&limit=1'), first('/games?status=final&limit=1'), first('/diary?limit=3'), first('/prode/leaderboard'),
+      first('/roster')]);
+    // roster strip
+    const squad = ro?.details || [];
+    if (squad.length) rosterBox.append(...squad.map(miniCard));
+    else rosterBox.closest('section').remove();
 
     // next
     const g = nx?.games?.[0];

@@ -1,4 +1,4 @@
-import { el, t, registerStrings, loadCSS, fmtNum } from '../core.js';
+import { el, t, registerStrings, loadCSS, fmtNum, api } from '../core.js';
 
 registerStrings({
   es: {
@@ -124,12 +124,37 @@ async function renderOverview(container) {
   wrap.append(footnote());
 }
 
+// Season in progress: players, averages and coach come live from the server (ESPN roster sync),
+// and the record is counted from the synced games.
+async function mergeLiveSeason(data) {
+  try {
+    const r = await api('/roster');
+    const live = (r.details || []).filter(p => p.stats);
+    if (live.length) {
+      data.players = live.map(p => ({
+        name: p.name, slug: p.name.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''), pos: p.position, age: p.age, gs: null, ...p.stats,
+      }));
+    }
+    if (r.coach) data.coach = r.coach;
+  } catch { /* keep static file */ }
+  try {
+    const { games } = await api('/games?status=final&limit=120');
+    const mine = games.filter(g => g.season === data.season && !g.demo && g.mavs_score != null);
+    if (mine.length) {
+      data.wins = mine.filter(g => g.mavs_score > g.opp_score).length;
+      data.losses = mine.length - data.wins;
+    }
+  } catch { /* ignore */ }
+  data.wins ??= 0; data.losses ??= 0;
+}
+
 async function renderSeason(container, params) {
   const season = params.season;
   const wrap = el('div', { class: 'stats-page stack' });
   container.append(wrap);
   wrap.append(el('a', { class: 'st-back', href: '#/stats' }, t('stats.backAll')), el('div', { class: 'spinner' }));
   const data = await getJSON(`/data/seasons/${encodeURIComponent(season)}.json`);
+  if (data && data.playoff === 'in_progress') await mergeLiveSeason(data);
   wrap.querySelector('.spinner')?.remove();
   if (!data) {
     wrap.append(el('div', { class: 'empty' }, t('stats.noSeason', { season })), footnote());

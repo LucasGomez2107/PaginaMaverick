@@ -39,7 +39,7 @@ export default [
 - default export: one route object **or** an array of them.
 - `render` may be async. `container` is an empty `<main>` child. `params` = path params, `query` = URLSearchParams.
 - When the language changes the router re-renders the current route automatically (call cleanup first). So just render using `t()`.
-- Routes (owner module): `/` home · `/stats`, `/stats/:season`, `/stats/player/:slug` stats · `/forum`, `/forum/:id` forum ·
+- Routes (owner module): `/` home · `/roster` roster · `/stats`, `/stats/:season`, `/stats/player/:slug` stats · `/forum`, `/forum/:id` forum ·
   `/diary`, `/diary/:id` diary · `/prode` prode · `/tateti` tateti · `/guess` guess · `/ranking` leaderboard ·
   `/login`, `/register` login · `/profile` profile · `/admin` admin.
 - Links use hash: `<a href="#/forum/12">`.
@@ -103,13 +103,15 @@ Game object:
   leaders: { points:{player,value}, rebounds:{player,value}, assists:{player,value} } | null,   // Mavs leaders
   comment_count, diary_id|null, locked: bool }   // locked = date <= now or status != scheduled
 ```
-- `GET /api/games?status=scheduled|final|all&limit=` → `{games:[...]}` (scheduled sorted asc, final desc)
+- `GET /api/games?status=scheduled|final|all&limit=&from=ISO&to=ISO&order=asc|desc` → `{games:[...]}` (default: scheduled asc, others desc; `from` inclusive, `to` exclusive)
 - `GET /api/games/:id` → `{game}`
 - `POST /api/games` (admin) body = game fields → `{game}`
 - `PUT /api/games/:id` (admin) partial update; when status becomes/is `final` with leaders → prode predictions for that game are (re)scored
 - `DELETE /api/games/:id` (admin)
 - `POST /api/admin/sync` (admin) → force ESPN sync `{ok, imported, error?}`
-- `GET /api/roster` → `{players:["Cooper Flagg", ...]}` ; `PUT /api/roster {players:[...]}` (admin)
+- `GET /api/roster` → `{players:[names], details:[{name, espn_id, jersey, position, height_cm, weight_kg, age, country, city, college, experience, injury:{status,detail}|null, stats:{gp,mpg,ppg,rpg,apg,spg,bpg,fgp,tpp,ftp}|null}], coach, season, source:'espn'|'manual'|'default', updated_at}`
+  Synced from ESPN every 30 min (and by `POST /api/admin/sync`); `PUT /api/roster {players:[...]}` (admin) sets a manual list until the next sync.
+- When the ESPN schedule sync succeeds, demo rows are deleted automatically.
 
 ### Forum (comments per game)
 - `GET /api/games/:id/comments` → `{comments:[{id, game_id, parent_id|null, user:{id,username}, body, created_at}]}` (asc)

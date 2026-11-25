@@ -28,8 +28,7 @@
   "name": "Anthony Davis",
   "seasons": [
    "2024-25",
-   "2025-26",
-   "2026-27"
+   "2025-26"
   ]
  },
  "brad-davis": {
@@ -61,8 +60,7 @@
   "name": "Brandon Williams",
   "seasons": [
    "2024-25",
-   "2025-26",
-   "2026-27"
+   "2025-26"
   ]
  },
  "brendan-haywood": {
@@ -117,8 +115,7 @@
  "d-angelo-russell": {
   "name": "D'Angelo Russell",
   "seasons": [
-   "2025-26",
-   "2026-27"
+   "2025-26"
   ]
  },
  "dale-ellis": {
@@ -142,8 +139,7 @@
   "seasons": [
    "2023-24",
    "2024-25",
-   "2025-26",
-   "2026-27"
+   "2025-26"
   ]
  },
  "darren-collison": {
@@ -364,8 +360,7 @@
    "2022-23",
    "2023-24",
    "2024-25",
-   "2025-26",
-   "2026-27"
+   "2025-26"
   ]
  },
  "jalen-brunson": {
@@ -445,6 +440,12 @@
    "2007-08"
   ]
  },
+ "jett-howard": {
+  "name": "Jett Howard",
+  "seasons": [
+   "2026-27"
+  ]
+ },
  "jim-jackson": {
   "name": "Jim Jackson",
   "seasons": [
@@ -504,8 +505,7 @@
   "name": "Klay Thompson",
   "seasons": [
    "2024-25",
-   "2025-26",
-   "2026-27"
+   "2025-26"
   ]
  },
  "kristaps-porzingis": {
@@ -543,6 +543,12 @@
    "2022-23",
    "2023-24",
    "2024-25"
+  ]
+ },
+ "marcus-sasser": {
+  "name": "Marcus Sasser",
+  "seasons": [
+   "2026-27"
   ]
  },
  "mark-aguirre": {
@@ -604,6 +610,18 @@
    "2014-15"
   ]
  },
+ "morez-johnson-jr": {
+  "name": "Morez Johnson Jr.",
+  "seasons": [
+   "2026-27"
+  ]
+ },
+ "moussa-cisse": {
+  "name": "Moussa Cisse",
+  "seasons": [
+   "2026-27"
+  ]
+ },
  "naji-marshall": {
   "name": "Naji Marshall",
   "seasons": [
@@ -635,8 +653,7 @@
   "name": "Olivier-Maxence Prosper",
   "seasons": [
    "2024-25",
-   "2025-26",
-   "2026-27"
+   "2025-26"
   ]
  },
  "p-j-washington": {
@@ -708,8 +725,7 @@
  "ryan-nembhard": {
   "name": "Ryan Nembhard",
   "seasons": [
-   "2025-26",
-   "2026-27"
+   "2025-26"
   ]
  },
  "sam-perkins": {
@@ -727,6 +743,18 @@
   "name": "Samuel Dalembert",
   "seasons": [
    "2013-14"
+  ]
+ },
+ "santi-aldama": {
+  "name": "Santi Aldama",
+  "seasons": [
+   "2026-27"
+  ]
+ },
+ "sergio-de-larrea": {
+  "name": "Sergio de Larrea",
+  "seasons": [
+   "2026-27"
   ]
  },
  "seth-curry": {
@@ -766,6 +794,12 @@
    "2003-04"
   ]
  },
+ "tarik-biberovic": {
+  "name": "Tarik Biberovic",
+  "seasons": [
+   "2026-27"
+  ]
+ },
  "tim-hardaway-jr": {
   "name": "Tim Hardaway Jr.",
   "seasons": [
@@ -774,6 +808,12 @@
    "2021-22",
    "2022-23",
    "2023-24"
+  ]
+ },
+ "tobi-lawal": {
+  "name": "Tobi Lawal",
+  "seasons": [
+   "2026-27"
   ]
  },
  "tom-lagarde": {
@@ -795,6 +835,12 @@
    "2011-12",
    "2012-13",
    "2013-14"
+  ]
+ },
+ "walter-clayton-jr": {
+  "name": "Walter Clayton Jr.",
+  "seasons": [
+   "2026-27"
   ]
  },
  "wesley-matthews": {
@@ -823,6 +869,12 @@
   "seasons": [
    "2016-17",
    "2017-18"
+  ]
+ },
+ "zaccharie-risacher": {
+  "name": "Zaccharie Risacher",
+  "seasons": [
+   "2026-27"
   ]
  },
  "zaza-pachulia": {

@@ -3,7 +3,7 @@ import { el, t, api, registerStrings, getUser, isAdmin, toast, loadCSS, fmtDate,
 registerStrings({
   es: {
     'forum.title': 'Foro', 'forum.kicker': 'Tribuna', 'forum.h1': 'Foro del partido',
-    'forum.upcoming': 'Próximos partidos', 'forum.recent': 'Resultados recientes', 'forum.none': 'No hay partidos para mostrar.',
+    'forum.upcoming': 'Hoy y próximos partidos', 'forum.recent': 'Partidos anteriores', 'forum.today': 'HOY', 'forum.none': 'No hay partidos para mostrar.',
     'forum.comments': '{n} comentarios', 'forum.comment1': '1 comentario', 'forum.final': 'Final', 'forum.live': 'En vivo', 'forum.scheduled': 'Programado',
     'forum.back': '← Todos los partidos', 'forum.notFound': 'Partido no encontrado.', 'forum.newComment': 'Nuevo comentario',
     'forum.placeholder': 'Escribí tu comentario (máx. 1000 caracteres)…', 'forum.post': 'Comentar', 'forum.loginPrompt': 'Iniciá sesión para comentar',
@@ -14,7 +14,7 @@ registerStrings({
   },
   en: {
     'forum.title': 'Forum', 'forum.kicker': 'The stands', 'forum.h1': 'Game forum',
-    'forum.upcoming': 'Upcoming games', 'forum.recent': 'Recent results', 'forum.none': 'No games to show.',
+    'forum.upcoming': 'Today & upcoming', 'forum.recent': 'Previous games', 'forum.today': 'TODAY', 'forum.none': 'No games to show.',
     'forum.comments': '{n} comments', 'forum.comment1': '1 comment', 'forum.final': 'Final', 'forum.live': 'Live', 'forum.scheduled': 'Scheduled',
     'forum.back': '← All games', 'forum.notFound': 'Game not found.', 'forum.newComment': 'New comment',
     'forum.placeholder': 'Write your comment (max 1000 characters)…', 'forum.post': 'Post', 'forum.loginPrompt': 'Log in to comment',
@@ -25,7 +25,7 @@ registerStrings({
   },
   pt: {
     'forum.title': 'Fórum', 'forum.kicker': 'Arquibancada', 'forum.h1': 'Fórum do jogo',
-    'forum.upcoming': 'Próximos jogos', 'forum.recent': 'Resultados recentes', 'forum.none': 'Não há jogos para mostrar.',
+    'forum.upcoming': 'Hoje e próximos jogos', 'forum.recent': 'Jogos anteriores', 'forum.today': 'HOJE', 'forum.none': 'Não há jogos para mostrar.',
     'forum.comments': '{n} comentários', 'forum.comment1': '1 comentário', 'forum.final': 'Final', 'forum.live': 'Ao vivo', 'forum.scheduled': 'Agendado',
     'forum.back': '← Todos os jogos', 'forum.notFound': 'Jogo não encontrado.', 'forum.newComment': 'Novo comentário',
     'forum.placeholder': 'Escreva seu comentário (máx. 1000 caracteres)…', 'forum.post': 'Comentar', 'forum.loginPrompt': 'Entre para comentar',
@@ -56,9 +56,12 @@ function statusBadge(g) {
 
 const commentsLabel = n => n === 1 ? t('forum.comment1') : t('forum.comments', { n });
 
+const isToday = iso => new Date(iso).toDateString() === new Date().toDateString();
+
 function gameCard(g) {
-  return el('a', { class: `ticket fo-game fo-${g.status}`, href: `#/forum/${g.id}` },
-    el('div', { class: 'fo-game-date' }, el('span', { class: 'kicker' }, fmtDateTime(g.date))),
+  return el('a', { class: `ticket fo-game fo-${g.status} ${isToday(g.date) ? 'fo-today' : ''}`, href: `#/forum/${g.id}` },
+    el('div', { class: 'fo-game-date row' }, el('span', { class: 'kicker' }, fmtDateTime(g.date)),
+      isToday(g.date) ? el('span', { class: 'badge badge-today' }, t('forum.today')) : null),
     el('div', { class: 'fo-game-vs' },
       el('span', { class: 'fo-ha' }, g.home ? t('common.vs') : t('common.at')),
       el('span', { class: 'fo-opp' }, g.opponent),
@@ -71,10 +74,16 @@ async function renderList(container) {
   const wrap = el('div', { class: 'forum-page stack' }, el('div', { class: 'page-head' }, el('span', { class: 'kicker' }, t('forum.kicker')), el('h1', {}, t('forum.h1'))), el('div', { class: 'spinner' }));
   container.append(wrap);
   try {
-    const { games } = await api('/games?status=all&limit=40');
+    // From today's game (inclusive) onwards; finished games of today also count as "today".
+    const today = new Date(); today.setHours(0, 0, 0, 0);
+    const from = encodeURIComponent(today.toISOString());
+    const [{ games: next }, { games: past }] = await Promise.all([
+      api(`/games?status=all&from=${from}&order=asc&limit=30`),
+      api(`/games?status=final&to=${from}&limit=12`),
+    ]);
     wrap.querySelector('.spinner')?.remove();
-    const up = games.filter(g => g.status !== 'final').sort((a, b) => new Date(a.date) - new Date(b.date));
-    const done = games.filter(g => g.status === 'final').sort((a, b) => new Date(b.date) - new Date(a.date));
+    const up = next;
+    const done = past;
     const section = (title, list) => el('section', { class: 'stack' }, el('h2', { class: 'fo-h2' }, title),
       list.length ? el('div', { class: 'grid grid-3 fo-grid' }, list.map(gameCard)) : el('div', { class: 'empty' }, t('forum.none')));
     wrap.append(section(t('forum.upcoming'), up), section(t('forum.recent'), done));

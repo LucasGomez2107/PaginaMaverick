@@ -3,7 +3,7 @@
 import { t, loadUser, onLangChange, onAuthChange, hasChosenLang, el } from './core.js';
 
 const PAGE_MODULES = [
-  'home', 'stats', 'forum', 'diary', 'prode', 'tateti', 'guess', 'leaderboard', 'login', 'profile', 'admin',
+  'home', 'roster', 'stats', 'forum', 'diary', 'prode', 'tateti', 'guess', 'leaderboard', 'login', 'profile', 'admin',
 ];
 
 const routes = [];
