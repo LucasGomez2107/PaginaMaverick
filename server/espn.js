@@ -403,3 +403,89 @@ export function startSyncLoop() {
   setTimeout(() => { run(); runRoster(); }, 1000).unref();
   setInterval(() => { run(); runRoster(); }, CACHE_MS).unref();
 }
+
+// ---------- game box score (summary endpoint, normalized) ----------
+const LIVE_BOX_MS = 60 * 1000;
+const liveBoxCache = new Map(); // espnId -> { until, data }
+const BOX_STAT_MAP = {
+  fg: 'fieldGoalsMade-fieldGoalsAttempted', fgp: 'fieldGoalPct',
+  tp: 'threePointFieldGoalsMade-threePointFieldGoalsAttempted', tpp: 'threePointFieldGoalPct',
+  ft: 'freeThrowsMade-freeThrowsAttempted', ftp: 'freeThrowPct',
+  reb: 'totalRebounds', oreb: 'offensiveRebounds', dreb: 'defensiveRebounds', ast: 'assists', stl: 'steals', blk: 'blocks',
+  tov: 'totalTurnovers', pf: 'fouls', paint: 'pointsInPaint', fastbreak: 'fastBreakPoints', tovpts: 'turnoverPoints',
+  largest_lead: 'largestLead',
+};
+const BOX_TEXT_KEYS = new Set(['fg', 'tp', 'ft']);
+const PLAYER_LABELS = { min: 'MIN', pts: 'PTS', fg: 'FG', tp: '3PT', ft: 'FT', reb: 'REB', ast: 'AST', tov: 'TO', stl: 'STL', blk: 'BLK', oreb: 'OREB', dreb: 'DREB', pf: 'PF', pm: '+/-' };
+
+function boxVal(key, raw) {
+  if (raw == null || raw === '') return null;
+  if (BOX_TEXT_KEYS.has(key)) return String(raw);
+  const n = parseFloat(String(raw).replace('+', ''));
+  return Number.isFinite(n) ? n : null;
+}
+
+function normalizeBox(data) {
+  const comp = data?.header?.competitions?.[0];
+  const competitors = comp?.competitors || [];
+  const boxTeams = data?.boxscore?.teams || [];
+  if (!competitors.length || !boxTeams.length) return null;
+  const stype = comp?.status?.type || {};
+  const status = stype.completed || stype.state === 'post' ? 'final' : (stype.state === 'in' ? 'live' : 'scheduled');
+  const teams = competitors.map(c => {
+    const abbr = c.team?.abbreviation || '';
+    const bt = boxTeams.find(x => (x.team?.abbreviation || '') === abbr) || {};
+    const byName = {};
+    for (const s of bt.statistics || []) byName[s.name] = s.displayValue ?? s.value;
+    const stats = {};
+    for (const [k, name] of Object.entries(BOX_STAT_MAP)) stats[k] = boxVal(k, byName[name]);
+    const pbox = (data.boxscore.players || []).find(p => (p.team?.abbreviation || '') === abbr);
+    const players = [];
+    let totals = null;
+    for (const grp of pbox?.statistics || []) {
+      const labels = grp.labels || grp.names || [];
+      const idx = {};
+      for (const [k, lab] of Object.entries(PLAYER_LABELS)) idx[k] = labels.indexOf(lab);
+      const read = arr => {
+        const o = {};
+        for (const k of Object.keys(PLAYER_LABELS)) {
+          const v = idx[k] >= 0 ? arr?.[idx[k]] : null;
+          o[k] = v == null || v === '' ? null : (['fg', 'tp', 'ft', 'min'].includes(k) ? String(v) : boxVal(k, v));
+        }
+        return o;
+      };
+      for (const a of grp.athletes || []) {
+        const dnp = !!a.didNotPlay || !Array.isArray(a.stats) || !a.stats.length;
+        players.push({
+          name: a.athlete?.displayName || a.athlete?.shortName || '?',
+          jersey: a.athlete?.jersey ?? null, pos: a.athlete?.position?.abbreviation ?? null,
+          starter: !!a.starter, dnp, reason: dnp ? (a.reason || null) : null,
+          ...read(dnp ? [] : a.stats),
+        });
+      }
+      if (Array.isArray(grp.totals) && grp.totals.length) totals = read(grp.totals);
+    }
+    return {
+      abbr, name: c.team?.displayName || abbr, home: c.homeAway === 'home', score: num(c.score),
+      linescores: (c.linescores || []).map(l => num(l.displayValue ?? l.value) ?? 0),
+      stats, players, totals: totals || {},
+    };
+  });
+  teams.sort((a, b) => (b.abbr.toLowerCase() === MAVS.abbr) - (a.abbr.toLowerCase() === MAVS.abbr));
+  const lead = boxTeams.map(t => (t.statistics || []).find(s => s.name === 'leadChanges')?.displayValue).find(v => v != null);
+  return { status, teams, lead_changes: boxVal('lead_changes', lead) };
+}
+
+/** Normalized box score for an ESPN event. Never throws; null on failure. Non-final games are cached 60 s. */
+export async function getBoxScore(espnId, gameStatus = 'final') {
+  try {
+    if (!espnId) return null;
+    const url = `${BASE}/basketball/nba/summary?event=${encodeURIComponent(espnId)}`;
+    if (gameStatus === 'final') return normalizeBox(await fetchJson(url));
+    const hit = liveBoxCache.get(espnId);
+    if (hit && hit.until > Date.now()) return hit.data;
+    const data = normalizeBox(await fetchJson(url, { useCache: false }));
+    liveBoxCache.set(espnId, { until: Date.now() + LIVE_BOX_MS, data });
+    return data;
+  } catch { return null; }
+}

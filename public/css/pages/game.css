@@ -1,0 +1,43 @@
+.game-page{--gm-a:var(--royal);--gm-b:var(--ink)}
+.gm-back{font-family:var(--font-mono);font-weight:600;font-size:.9rem;color:var(--navy);text-decoration:none}
+.gm-back:hover{text-decoration:underline}
+.gm-head{display:flex;flex-direction:column;gap:.7rem}
+.gm-title{display:flex;flex-wrap:wrap;align-items:baseline;gap:.2em .45em;margin:0;color:var(--navy);font-size:clamp(1.8rem,6vw,3.2rem);line-height:1.05}
+.gm-title i{font-style:normal;color:var(--silver)}
+.gm-score{font-family:var(--font-display);font-weight:900;color:var(--ink)}
+.gm-live{background:var(--loss);color:#fff;animation:gmpulse 1.4s ease-in-out infinite}
+@keyframes gmpulse{50%{opacity:.55}}
+.gm-h2{margin:.4rem 0 0;color:var(--navy);font-size:clamp(1.5rem,4.5vw,2rem)}
+.gm-quarters td,.gm-quarters th{text-align:center}
+.gm-quarters td:first-child,.gm-quarters th:first-child{text-align:left;font-weight:700}
+.gm-quarters tr.gm-us td{font-weight:700}
+.gm-cmp{display:flex;flex-direction:column;gap:.9rem;padding:1rem 1.1rem}
+.gm-cmp-head{display:flex;justify-content:space-between;align-items:center;gap:.5rem;font-family:var(--font-display);font-size:1.5rem;letter-spacing:.05em}
+.gm-ha{color:var(--gm-a)}
+.gm-cmp-row{display:grid;grid-template-columns:1fr minmax(0,1.6fr) 1fr;grid-template-areas:"a lab b" "bars bars bars";gap:.2rem .6rem;align-items:baseline}
+.gm-val{font-family:var(--font-mono);font-variant-numeric:tabular-nums;font-size:1.05rem;display:flex;flex-direction:column}
+.gm-val small{font-size:.65rem;color:var(--muted);white-space:nowrap}
+.gm-val-a{grid-area:a;align-items:flex-start}
+.gm-val-b{grid-area:b;align-items:flex-end}
+.gm-val.best{font-weight:800;color:var(--ink)}
+.gm-lab{grid-area:lab;text-align:center;font-family:var(--font-display);font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);font-size:1rem}
+.gm-bars{grid-area:bars;display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.gm-bar{display:flex;height:10px;background:#e9edf0;border:2px solid var(--ink);border-radius:2px;overflow:hidden}
+.gm-bar i{display:block;height:100%;opacity:.45}
+.gm-bar-a{justify-content:flex-end}
+.gm-bar-a i{background:var(--gm-a)}
+.gm-bar-b i{background:var(--gm-b)}
+.gm-bar.best i{opacity:1}
+.gm-players td:first-child{min-width:150px}
+.gm-pname{display:block;font-weight:600}
+.gm-players small{display:block;font-size:.72rem}
+.gm-pts{font-weight:800}
+.table-stats tr.gm-sep td{background:var(--silver)!important;color:var(--navy);font-family:var(--font-display);font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:.25rem .8rem}
+.table-stats tr.gm-dnp td{color:var(--muted);font-style:italic;background:var(--white)!important;font-size:.85rem}
+.table-stats tr.gm-totals td{background:var(--navy)!important;color:#fff;font-weight:800}
+.gm-note{text-align:center;font-size:.85rem}
+@media (max-width:520px){.gm-cmp-row{grid-template-columns:.8fr 1.4fr .8fr}.gm-lab{font-size:.85rem}}
+@media (max-width:520px){.gm-val small{font-size:.58rem}}
+
+/* keep the date tag compact */
+.game-page .kicker, .gm-head .kicker { align-self: flex-start; width: fit-content; max-width: 100%; }

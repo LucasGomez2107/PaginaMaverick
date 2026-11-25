@@ -1,7 +1,7 @@
 import { Router } from 'express';
 import { db, nowIso, seasonFor, getGame, listGames, scoreGame, getRoster, setRoster, getRosterDetails, kvGet } from '../db.js';
 import { requireAdmin } from '../auth.js';
-import { syncMavs, syncRoster, getTeamSummary } from '../espn.js';
+import { syncMavs, syncRoster, getTeamSummary, getBoxScore } from '../espn.js';
 import { deleteDemo } from '../seed.js';
 
 const r = Router();
@@ -79,6 +79,15 @@ r.get('/games/:id', (req, res) => {
   const game = getGame(req.params.id);
   if (!game) return res.status(404).json({ error: 'Partido no encontrado' });
   res.json({ game });
+});
+
+r.get('/games/:id/boxscore', async (req, res, next) => {
+  try {
+    const game = getGame(req.params.id);
+    if (!game) return res.status(404).json({ error: 'Partido no encontrado' });
+    if (!game.espn_id || game.status === 'scheduled') return res.json({ boxscore: null, reason: 'no_espn' });
+    res.json({ boxscore: await getBoxScore(game.espn_id, game.status) });
+  } catch (e) { next(e); }
 });
 
 r.post('/games', requireAdmin, (req, res) => {

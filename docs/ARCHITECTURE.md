@@ -105,6 +105,7 @@ Game object:
 ```
 - `GET /api/games?status=scheduled|final|all&limit=&from=ISO&to=ISO&order=asc|desc` → `{games:[...]}` (default: scheduled asc, others desc; `from` inclusive, `to` exclusive)
 - `GET /api/games/:id` → `{game}`
+- `GET /api/games/:id/boxscore` → `{boxscore}` | `{boxscore:null, reason:'no_espn'}` (no `espn_id` or still scheduled) | 404. `boxscore = {status:'final'|'live', lead_changes, teams:[{abbr, name, home, score, linescores:[n..], stats:{fg:'43-88', fgp, tp, tpp, ft, ftp, reb, oreb, dreb, ast, stl, blk, tov, pf, paint, fastbreak, tovpts, largest_lead}, players:[{name, jersey, pos, starter, dnp, reason, min, pts, fg, tp, ft, reb, ast, tov, stl, blk, oreb, dreb, pf, pm}], totals:{same keys as player}}]}`, Dallas first. From the ESPN summary endpoint (`espn.js getBoxScore`): final games cached 30 min, live games 60 s; `boxscore:null` if ESPN fails. UI: `#/game/:id` (`pages/game.js`).
 - `POST /api/games` (admin) body = game fields → `{game}`
 - `PUT /api/games/:id` (admin) partial update; when status becomes/is `final` with leaders → prode predictions for that game are (re)scored
 - `DELETE /api/games/:id` (admin)

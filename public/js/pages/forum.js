@@ -5,7 +5,7 @@ registerStrings({
     'forum.title': 'Foro', 'forum.kicker': 'Tribuna', 'forum.h1': 'Foro del partido',
     'forum.upcoming': 'Hoy y próximos partidos', 'forum.recent': 'Partidos anteriores', 'forum.today': 'HOY', 'forum.none': 'No hay partidos para mostrar.',
     'forum.comments': '{n} comentarios', 'forum.comment1': '1 comentario', 'forum.final': 'Final', 'forum.live': 'En vivo', 'forum.scheduled': 'Programado',
-    'forum.back': '← Todos los partidos', 'forum.notFound': 'Partido no encontrado.', 'forum.newComment': 'Nuevo comentario',
+    'forum.back': '← Todos los partidos', 'forum.boxscore': 'Ver estadísticas', 'forum.notFound': 'Partido no encontrado.', 'forum.newComment': 'Nuevo comentario',
     'forum.placeholder': 'Escribí tu comentario (máx. 1000 caracteres)…', 'forum.post': 'Comentar', 'forum.loginPrompt': 'Iniciá sesión para comentar',
     'forum.empty': 'Nadie comentó todavía. ¡Rompé el hielo!', 'forum.reply': 'Responder', 'forum.replyTo': 'Respondiendo a {user}',
     'forum.delete': 'Borrar', 'forum.confirmDel': '¿Borrar este comentario?', 'forum.diary': 'Leer el diario del partido', 'forum.prode': 'Hacer tu pronóstico',
@@ -16,7 +16,7 @@ registerStrings({
     'forum.title': 'Forum', 'forum.kicker': 'The stands', 'forum.h1': 'Game forum',
     'forum.upcoming': 'Today & upcoming', 'forum.recent': 'Previous games', 'forum.today': 'TODAY', 'forum.none': 'No games to show.',
     'forum.comments': '{n} comments', 'forum.comment1': '1 comment', 'forum.final': 'Final', 'forum.live': 'Live', 'forum.scheduled': 'Scheduled',
-    'forum.back': '← All games', 'forum.notFound': 'Game not found.', 'forum.newComment': 'New comment',
+    'forum.back': '← All games', 'forum.boxscore': 'Box score', 'forum.notFound': 'Game not found.', 'forum.newComment': 'New comment',
     'forum.placeholder': 'Write your comment (max 1000 characters)…', 'forum.post': 'Post', 'forum.loginPrompt': 'Log in to comment',
     'forum.empty': 'No comments yet. Break the ice!', 'forum.reply': 'Reply', 'forum.replyTo': 'Replying to {user}',
     'forum.delete': 'Delete', 'forum.confirmDel': 'Delete this comment?', 'forum.diary': 'Read the game diary', 'forum.prode': 'Make your prediction',
@@ -27,7 +27,7 @@ registerStrings({
     'forum.title': 'Fórum', 'forum.kicker': 'Arquibancada', 'forum.h1': 'Fórum do jogo',
     'forum.upcoming': 'Hoje e próximos jogos', 'forum.recent': 'Jogos anteriores', 'forum.today': 'HOJE', 'forum.none': 'Não há jogos para mostrar.',
     'forum.comments': '{n} comentários', 'forum.comment1': '1 comentário', 'forum.final': 'Final', 'forum.live': 'Ao vivo', 'forum.scheduled': 'Agendado',
-    'forum.back': '← Todos os jogos', 'forum.notFound': 'Jogo não encontrado.', 'forum.newComment': 'Novo comentário',
+    'forum.back': '← Todos os jogos', 'forum.boxscore': 'Ver estatísticas', 'forum.notFound': 'Jogo não encontrado.', 'forum.newComment': 'Novo comentário',
     'forum.placeholder': 'Escreva seu comentário (máx. 1000 caracteres)…', 'forum.post': 'Comentar', 'forum.loginPrompt': 'Entre para comentar',
     'forum.empty': 'Ninguém comentou ainda. Quebre o gelo!', 'forum.reply': 'Responder', 'forum.replyTo': 'Respondendo a {user}',
     'forum.delete': 'Apagar', 'forum.confirmDel': 'Apagar este comentário?', 'forum.diary': 'Ler o diário do jogo', 'forum.prode': 'Fazer seu palpite',
@@ -106,6 +106,7 @@ async function renderGame(container, params) {
   }
   wrap.querySelector('.spinner')?.remove();
   const links = el('div', { class: 'row' },
+    game.status !== 'scheduled' ? el('a', { class: 'btn btn-primary btn-sm', href: `#/game/${game.id}` }, '📊 ' + t('forum.boxscore')) : null,
     game.diary_id ? el('a', { class: 'btn btn-ghost btn-sm', href: `#/diary/${game.diary_id}` }, '📰 ' + t('forum.diary')) : null,
     !game.locked ? el('a', { class: 'btn btn-primary btn-sm', href: '#/prode' }, '🎯 ' + t('forum.prode')) : null);
   wrap.append(el('div', { class: 'ticket fo-head' },

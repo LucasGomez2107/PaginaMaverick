@@ -6,7 +6,7 @@ registerStrings({
     'home.title': 'Inicio', 'home.heroKicker': 'Mavs desde Sudamérica', 'home.heroTitle': 'Día de partido todos los días',
     'home.heroText': 'Estadísticas, foro, diario, prode y juegos para los hinchas de Dallas en Sudamérica.',
     'home.next': 'Próximo partido', 'home.last': 'Último resultado', 'home.noNext': 'Todavía no hay un próximo partido cargado.',
-    'home.noLast': 'Todavía no hay resultados.', 'home.predict': 'Hacer mi prode', 'home.discuss': 'Foro del partido',
+    'home.noLast': 'Todavía no hay resultados.', 'home.predict': 'Hacer mi prode', 'home.discuss': 'Foro del partido', 'home.boxscore': 'Ver estadísticas',
     'home.leaders': 'Líderes de Dallas', 'home.pts': 'Puntos', 'home.reb': 'Rebotes', 'home.ast': 'Asistencias',
     'home.days': 'días', 'home.hours': 'hs', 'home.min': 'min', 'home.sec': 'seg', 'home.tipoff': 'Salta la pelota', 'home.live': 'En juego o por empezar',
     'home.diary': 'Diario del partido', 'home.diaryAll': 'Ver todo el diario', 'home.noDiary': 'El diario se estrena pronto.',
@@ -22,7 +22,7 @@ registerStrings({
     'home.title': 'Home', 'home.heroKicker': 'Mavs from South America', 'home.heroTitle': 'Matchday every day',
     'home.heroText': 'Stats, forum, diary, prode and games for Dallas fans across South America.',
     'home.next': 'Next game', 'home.last': 'Last result', 'home.noNext': 'No upcoming game loaded yet.',
-    'home.noLast': 'No results yet.', 'home.predict': 'Make my prode', 'home.discuss': 'Game forum',
+    'home.noLast': 'No results yet.', 'home.predict': 'Make my prode', 'home.discuss': 'Game forum', 'home.boxscore': 'Box score',
     'home.leaders': 'Dallas leaders', 'home.pts': 'Points', 'home.reb': 'Rebounds', 'home.ast': 'Assists',
     'home.days': 'days', 'home.hours': 'hrs', 'home.min': 'min', 'home.sec': 'sec', 'home.tipoff': 'Tip-off', 'home.live': 'Live or about to start',
     'home.diary': 'Game diary', 'home.diaryAll': 'See the whole diary', 'home.noDiary': 'The diary opens soon.',
@@ -38,7 +38,7 @@ registerStrings({
     'home.title': 'Início', 'home.heroKicker': 'Mavs da América do Sul', 'home.heroTitle': 'Dia de jogo todos os dias',
     'home.heroText': 'Estatísticas, fórum, diário, bolão e jogos para os torcedores de Dallas na América do Sul.',
     'home.next': 'Próximo jogo', 'home.last': 'Último resultado', 'home.noNext': 'Ainda não há próximo jogo cadastrado.',
-    'home.noLast': 'Ainda não há resultados.', 'home.predict': 'Fazer meu bolão', 'home.discuss': 'Fórum do jogo',
+    'home.noLast': 'Ainda não há resultados.', 'home.predict': 'Fazer meu bolão', 'home.discuss': 'Fórum do jogo', 'home.boxscore': 'Ver estatísticas',
     'home.leaders': 'Líderes de Dallas', 'home.pts': 'Pontos', 'home.reb': 'Rebotes', 'home.ast': 'Assistências',
     'home.days': 'dias', 'home.hours': 'h', 'home.min': 'min', 'home.sec': 'seg', 'home.tipoff': 'Bola ao alto', 'home.live': 'Ao vivo ou por começar',
     'home.diary': 'Diário do jogo', 'home.diaryAll': 'Ver todo o diário', 'home.noDiary': 'O diário estreia em breve.',
@@ -182,7 +182,9 @@ export default {
       const ld = l.leaders;
       if (ld) lastBox.append(el('div', { class: 'leaders' }, [['points', 'home.pts'], ['rebounds', 'home.reb'], ['assists', 'home.ast']].filter(([k]) => ld[k]).map(([k, lab]) =>
         el('div', {}, el('b', { class: 'num' }, ld[k].value), el('small', {}, t(lab)), el('span', {}, ld[k].player)))));
-      lastBox.append(el('a', { class: 'btn btn-sm', href: '#/forum/' + l.id }, t('home.discuss')));
+      lastBox.append(el('div', { class: 'row' },
+        el('a', { class: 'btn btn-sm btn-primary', href: '#/game/' + l.id }, t('home.boxscore')),
+        el('a', { class: 'btn btn-sm', href: '#/forum/' + l.id }, t('home.discuss'))));
     }
     // diary
     const es = di?.entries || [];
