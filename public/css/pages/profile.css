@@ -1,0 +1,8 @@
+.stat{display:flex;flex-direction:column;align-items:flex-start;padding:1rem 1.6rem}
+.stat .big{font-size:4.2rem;color:transparent;-webkit-text-stroke:2px var(--navy)}
+.lang-card{margin:1.4rem 0}
+.plain-list{list-style:none;margin:0;padding:0}
+.plain-list li{display:flex;gap:.7rem;align-items:center;justify-content:space-between;padding:.55rem 0;border-bottom:1px dashed var(--silver)}
+.plain-list li:last-child{border:0}
+.plain-list li .muted{flex:1;font-size:.85rem}
+.plain-list b{color:var(--royal)}
