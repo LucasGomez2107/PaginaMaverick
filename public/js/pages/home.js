@@ -3,7 +3,7 @@ import { miniCard } from './roster.js';
 
 registerStrings({
   es: {
-    'home.title': 'Inicio', 'home.heroKicker': 'Mavs desde Sudamérica', 'home.heroTitle': 'Día de partido, todos los días',
+    'home.title': 'Inicio', 'home.heroKicker': 'Mavs desde Sudamérica', 'home.heroTitle': 'Día de partido todos los días',
     'home.heroText': 'Estadísticas, foro, diario, prode y juegos para los hinchas de Dallas en Sudamérica.',
     'home.next': 'Próximo partido', 'home.last': 'Último resultado', 'home.noNext': 'Todavía no hay un próximo partido cargado.',
     'home.noLast': 'Todavía no hay resultados.', 'home.predict': 'Hacer mi prode', 'home.discuss': 'Foro del partido',
@@ -16,9 +16,10 @@ registerStrings({
     'home.tRanking': 'Ranking', 'home.tRankingD': 'Quién manda en la comunidad',
     'home.top5': 'Top 5 del prode', 'home.topAll': 'Ver ranking completo', 'home.noTop': 'Nadie sumó puntos todavía. ¡Sé el primero!',
     'home.dallas': 'Dallas partido a partido', 'home.dLast': 'Último', 'home.dNext': 'Próximo', 'home.dNone': 'Sin partidos programados', 'home.dLive': 'EN VIVO', 'home.dNoLast': 'Sin resultados', 'home.final': 'Final', 'home.home': 'Local', 'home.away': 'Visitante', 'home.matchday': 'Matchday', 'home.comments': 'comentarios',
+    'home.sRecord': 'Récord', 'home.sSeed': 'en el Oeste', 'home.sStreak': 'Racha',
   },
   en: {
-    'home.title': 'Home', 'home.heroKicker': 'Mavs from South America', 'home.heroTitle': 'Matchday, every day',
+    'home.title': 'Home', 'home.heroKicker': 'Mavs from South America', 'home.heroTitle': 'Matchday every day',
     'home.heroText': 'Stats, forum, diary, prode and games for Dallas fans across South America.',
     'home.next': 'Next game', 'home.last': 'Last result', 'home.noNext': 'No upcoming game loaded yet.',
     'home.noLast': 'No results yet.', 'home.predict': 'Make my prode', 'home.discuss': 'Game forum',
@@ -31,9 +32,10 @@ registerStrings({
     'home.tRanking': 'Ranking', 'home.tRankingD': 'Who rules the community',
     'home.top5': 'Prode top 5', 'home.topAll': 'See full ranking', 'home.noTop': 'Nobody has scored yet. Be the first!',
     'home.dallas': 'Dallas game by game', 'home.dLast': 'Last', 'home.dNext': 'Next', 'home.dNone': 'No games scheduled', 'home.dLive': 'LIVE', 'home.dNoLast': 'No results', 'home.final': 'Final', 'home.home': 'Home', 'home.away': 'Away', 'home.matchday': 'Matchday', 'home.comments': 'comments',
+    'home.sRecord': 'Record', 'home.sSeed': 'in the West', 'home.sStreak': 'Streak',
   },
   pt: {
-    'home.title': 'Início', 'home.heroKicker': 'Mavs da América do Sul', 'home.heroTitle': 'Dia de jogo, todos os dias',
+    'home.title': 'Início', 'home.heroKicker': 'Mavs da América do Sul', 'home.heroTitle': 'Dia de jogo todos os dias',
     'home.heroText': 'Estatísticas, fórum, diário, bolão e jogos para os torcedores de Dallas na América do Sul.',
     'home.next': 'Próximo jogo', 'home.last': 'Último resultado', 'home.noNext': 'Ainda não há próximo jogo cadastrado.',
     'home.noLast': 'Ainda não há resultados.', 'home.predict': 'Fazer meu bolão', 'home.discuss': 'Fórum do jogo',
@@ -46,6 +48,7 @@ registerStrings({
     'home.tRanking': 'Ranking', 'home.tRankingD': 'Quem manda na comunidade',
     'home.top5': 'Top 5 do bolão', 'home.topAll': 'Ver ranking completo', 'home.noTop': 'Ninguém pontuou ainda. Seja o primeiro!',
     'home.dallas': 'Dallas jogo a jogo', 'home.dLast': 'Último', 'home.dNext': 'Próximo', 'home.dNone': 'Sem jogos agendados', 'home.dLive': 'AO VIVO', 'home.dNoLast': 'Sem resultados', 'home.final': 'Final', 'home.home': 'Casa', 'home.away': 'Fora', 'home.matchday': 'Matchday', 'home.comments': 'comentários',
+    'home.sRecord': 'Recorde', 'home.sSeed': 'no Oeste', 'home.sStreak': 'Sequência',
   },
 });
 
@@ -88,6 +91,19 @@ function dallasCard(x) {
     el('div', { class: 'dx-head' }, el('b', {}, x.name), el('span', { class: 'dx-lg mono' }, x.league)), last, next);
 }
 
+function summaryStrip(s) {
+  const chip = (value, label, attrs) => el('div', { class: 'ms-chip', ...attrs },
+    el('b', { class: 'ms-num' }, value), el('small', { class: 'ms-label' }, label));
+  const chips = [chip(s.record, t('home.sRecord'),
+    s.home && s.road ? { title: `${t('home.home')} ${s.home} · ${t('home.away')} ${s.road}` } : {})];
+  if (s.seed != null) chips.push(chip(`${s.seed}°`, t('home.sSeed')));
+  if (s.streak) {
+    const w = s.streak > 0;
+    chips.push(chip([el('span', { class: w ? 'ms-w' : 'ms-l' }, w ? 'W' : 'L'), String(Math.abs(s.streak))], t('home.sStreak')));
+  }
+  return el('div', { class: 'ms-strip' }, chips);
+}
+
 function tile(href, num, title, desc) {
   return el('a', { class: 'tile', href }, el('span', { class: 'tile-n outline-num', 'aria-hidden': 'true' }, num), el('h3', {}, title), el('p', {}, desc));
 }
@@ -109,6 +125,8 @@ export default {
     const lastBox = el('div', { class: 'ticket last' }, el('div', { class: 'spinner' }));
     const diaryBox = el('div', { class: 'stack' });
     const topBox = el('div', { class: 'card' });
+    const summaryBox = el('div', { class: 'ms-slot' });
+    container.append(summaryBox);
     container.append(el('div', { class: 'grid-2 match-row' }, nextBox, lastBox));
     const dallasBox = el('div', { class: 'dx-grid' });
     container.append(el('section', { class: 'stack home-dallas' }, el('h2', {}, t('home.dallas')), dallasBox));
@@ -123,9 +141,10 @@ export default {
       el('section', { class: 'stack' }, el('h2', {}, t('home.diary')), diaryBox),
       el('section', { class: 'stack' }, el('h2', {}, t('home.top5')), topBox)));
 
-    const [nx, ls, di, lb, ro] = await Promise.all([
+    const [nx, ls, di, lb, ro, sm] = await Promise.all([
       first('/games?status=scheduled&limit=1'), first('/games?status=final&limit=1'), first('/diary?limit=3'), first('/prode/leaderboard'),
-      first('/roster')]);
+      first('/roster'), first('/mavs/summary')]);
+    if (sm?.summary) summaryBox.append(summaryStrip(sm.summary)); else summaryBox.remove();
     // Dallas teams: last result + next game
     const dteams = (await first('/dallas'))?.teams || [];
     if (!dteams.length) dallasBox.closest('section').remove();

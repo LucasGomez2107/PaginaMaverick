@@ -1,7 +1,7 @@
 import { Router } from 'express';
 import { db, nowIso, seasonFor, getGame, listGames, scoreGame, getRoster, setRoster, getRosterDetails, kvGet } from '../db.js';
 import { requireAdmin } from '../auth.js';
-import { syncMavs, syncRoster } from '../espn.js';
+import { syncMavs, syncRoster, getTeamSummary } from '../espn.js';
 import { deleteDemo } from '../seed.js';
 
 const r = Router();
@@ -132,6 +132,10 @@ r.post('/admin/sync', requireAdmin, async (req, res, next) => {
 
 r.delete('/admin/demo', requireAdmin, (req, res) => {
   res.json({ ok: true, deleted: deleteDemo() });
+});
+
+r.get('/mavs/summary', async (req, res) => {
+  res.json({ summary: await getTeamSummary() });
 });
 
 r.get('/roster', (req, res) => {

@@ -109,6 +109,7 @@ Game object:
 - `PUT /api/games/:id` (admin) partial update; when status becomes/is `final` with leaders → prode predictions for that game are (re)scored
 - `DELETE /api/games/:id` (admin)
 - `POST /api/admin/sync` (admin) → force ESPN sync `{ok, imported, error?}`
+- `GET /api/mavs/summary` → `{summary: {record:'10-7', wins, losses, seed (West conference position)|null, conference:'West', streak (+3 = W3, -2 = L2)|null, home:'7-2'|null, road:'3-5'|null, games_behind|null} | null}` (ESPN, cached 30 min; `null` when unavailable)
 - `GET /api/roster` → `{players:[names], details:[{name, espn_id, jersey, position, height_cm, weight_kg, age, country, city, college, experience, injury:{status,detail}|null, stats:{gp,mpg,ppg,rpg,apg,spg,bpg,fgp,tpp,ftp}|null}], coach, season, source:'espn'|'manual'|'default', updated_at}`
   Synced from ESPN every 30 min (and by `POST /api/admin/sync`); `PUT /api/roster {players:[...]}` (admin) sets a manual list until the next sync.
 - When the ESPN schedule sync succeeds, demo rows are deleted automatically.

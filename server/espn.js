@@ -134,6 +134,32 @@ async function teamGames(team) {
   return ok ? { last, next } : null;
 }
 
+// ---------- Team summary (record / seed / streak) ----------
+export async function getTeamSummary() {
+  try {
+    const data = await fetchJson(`${BASE}/basketball/nba/teams/dal`);
+    const items = data?.team?.record?.items || [];
+    const total = items.find(i => i?.type === 'total');
+    if (!total?.summary) return null;
+    const stat = (it, name) => {
+      const v = it?.stats?.find(s => s?.name === name)?.value;
+      return v == null || !Number.isFinite(Number(v)) ? null : Number(v);
+    };
+    const m = String(total.summary).match(/^(\d+)-(\d+)/);
+    return {
+      record: total.summary,
+      wins: stat(total, 'wins') ?? (m ? Number(m[1]) : null),
+      losses: stat(total, 'losses') ?? (m ? Number(m[2]) : null),
+      seed: stat(total, 'playoffSeed'),
+      conference: 'West',
+      streak: stat(total, 'streak'),
+      home: items.find(i => i?.type === 'home')?.summary ?? null,
+      road: items.find(i => i?.type === 'road')?.summary ?? null,
+      games_behind: stat(total, 'gamesBehind'),
+    };
+  } catch { return null; }
+}
+
 // ---------- Dallas teams ----------
 let dallasInflight = null;
 
