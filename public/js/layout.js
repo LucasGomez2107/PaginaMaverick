@@ -4,7 +4,7 @@ import { t, registerStrings, el, api, getLang, setLang, LANGS, getUser, setUser,
 registerStrings({
   es: {
     'nav.home': 'Inicio', 'nav.roster': 'Roster', 'nav.stats': 'Estadísticas', 'nav.forum': 'Foro', 'nav.diary': 'Diario', 'nav.prode': 'Prode',
-    'nav.tateti': 'Tateti', 'nav.guess': 'Adiviná', 'nav.ranking': 'Ranking', 'nav.admin': 'Admin', 'nav.menu': 'Menú', 'nav.main': 'Navegación principal',
+    'nav.tateti': 'Tateti', 'nav.guess': 'Adiviná', 'nav.ranking': 'Ranking', 'nav.admin': 'Admin', 'nav.menu': 'Menú', 'nav.main': 'Navegación principal', 'nav.games': 'Juegos',
     'layout.tagline': 'Mavs desde Sudamérica', 'layout.ticker': 'Dallas día a día', 'layout.follow': 'Seguinos en X', 'layout.followSub': '@MavSudamerica',
     'layout.disclaimer': 'Sitio de fans no oficial, sin afiliación con los Dallas Mavericks ni la NBA.',
     'layout.langTitle': 'Elegí tu idioma', 'layout.langSub': 'Podés cambiarlo cuando quieras desde el menú.', 'layout.language': 'Idioma',
@@ -12,7 +12,7 @@ registerStrings({
   },
   en: {
     'nav.home': 'Home', 'nav.roster': 'Roster', 'nav.stats': 'Stats', 'nav.forum': 'Forum', 'nav.diary': 'Diary', 'nav.prode': 'Prode',
-    'nav.tateti': 'Tic-tac-toe', 'nav.guess': 'Guess', 'nav.ranking': 'Ranking', 'nav.admin': 'Admin', 'nav.menu': 'Menu', 'nav.main': 'Main navigation',
+    'nav.tateti': 'Tic-tac-toe', 'nav.guess': 'Guess', 'nav.ranking': 'Ranking', 'nav.admin': 'Admin', 'nav.menu': 'Menu', 'nav.main': 'Main navigation', 'nav.games': 'Games',
     'layout.tagline': 'Mavs from South America', 'layout.ticker': 'Dallas day by day', 'layout.follow': 'Follow us on X', 'layout.followSub': '@MavSudamerica',
     'layout.disclaimer': 'Unofficial fan site, not affiliated with the Dallas Mavericks or the NBA.',
     'layout.langTitle': 'Choose your language', 'layout.langSub': 'You can change it any time from the menu.', 'layout.language': 'Language',
@@ -20,7 +20,7 @@ registerStrings({
   },
   pt: {
     'nav.home': 'Início', 'nav.roster': 'Elenco', 'nav.stats': 'Estatísticas', 'nav.forum': 'Fórum', 'nav.diary': 'Diário', 'nav.prode': 'Bolão',
-    'nav.tateti': 'Jogo da velha', 'nav.guess': 'Adivinhe', 'nav.ranking': 'Ranking', 'nav.admin': 'Admin', 'nav.menu': 'Menu', 'nav.main': 'Navegação principal',
+    'nav.tateti': 'Jogo da velha', 'nav.guess': 'Adivinhe', 'nav.ranking': 'Ranking', 'nav.admin': 'Admin', 'nav.menu': 'Menu', 'nav.main': 'Navegação principal', 'nav.games': 'Jogos',
     'layout.tagline': 'Mavs da América do Sul', 'layout.ticker': 'Dallas dia a dia', 'layout.follow': 'Siga-nos no X', 'layout.followSub': '@MavSudamerica',
     'layout.disclaimer': 'Site de fãs não oficial, sem afiliação com os Dallas Mavericks nem com a NBA.',
     'layout.langTitle': 'Escolha seu idioma', 'layout.langSub': 'Você pode mudar quando quiser pelo menu.', 'layout.language': 'Idioma',
@@ -30,8 +30,12 @@ registerStrings({
 
 const NAV = [
   ['/', 'nav.home'], ['/roster', 'nav.roster'], ['/stats', 'nav.stats'], ['/forum', 'nav.forum'], ['/diary', 'nav.diary'],
-  ['/prode', 'nav.prode'], ['/tateti', 'nav.tateti'], ['/guess', 'nav.guess'], ['/ranking', 'nav.ranking'],
+  ['/prode', 'nav.prode'], ['/ranking', 'nav.ranking'],
 ];
+// Games live under the "Juegos" dropdown. Append new games here.
+const GAMES = [['/tateti', 'nav.tateti'], ['/guess', 'nav.guess']];
+// The dropdown sits right after Prode in the header; the footer lists everything flat.
+const SPLIT = NAV.findIndex(([p]) => p === '/prode') + 1;
 
 const SVGNS = 'http://www.w3.org/2000/svg';
 function svg(markup, cls, vb) {
@@ -45,7 +49,17 @@ export function monogram() {
 }
 const xIcon = () => svg('<path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>', '', '0 0 24 24');
 
-let headerEl, tickerEl, footerEl, menuOpen = false;
+let headerEl, tickerEl, footerEl, menuOpen = false, gamesOpen = false;
+
+// Toggle the desktop "Juegos" dropdown in place (no re-render, so focus stays put).
+function setGames(open) {
+  gamesOpen = open;
+  const drop = headerEl?.querySelector('.nav-drop');
+  if (drop) {
+    drop.classList.toggle('open', open);
+    drop.querySelector('.nav-drop-btn')?.setAttribute('aria-expanded', String(open));
+  }
+}
 let tickerTimer = null;
 
 function currentPath() { return (location.hash.slice(1) || '/').split('?')[0] || '/'; }
@@ -78,17 +92,33 @@ function userArea(mobile) {
 function renderHeader() {
   if (!headerEl) return;
   headerEl.className = 'site-header';
-  const navLinks = () => NAV.map(([p, k]) => el('a', { href: '#' + p, class: isActive(p) ? 'active' : '', 'aria-current': isActive(p) ? 'page' : null, onclick: () => closeMenu() }, t(k)));
+  const linkOf = ([p, k], cls = '') => el('a', { href: '#' + p, class: (cls + (isActive(p) ? ' active' : '')).trim(), 'aria-current': isActive(p) ? 'page' : null, onclick: () => closeMenu() }, t(k));
+  const gamesDrop = () => {
+    const active = GAMES.some(([p]) => isActive(p));
+    const drop = el('div', { class: 'nav-drop' + (gamesOpen ? ' open' : '') },
+      el('button', { class: 'nav-drop-btn' + (active ? ' active' : ''), type: 'button', 'aria-expanded': String(gamesOpen), 'aria-haspopup': 'true', 'aria-controls': 'nav-games-menu',
+        onclick: () => setGames(!gamesOpen) }, t('nav.games'), el('span', { class: 'nav-caret', 'aria-hidden': 'true' }, ' ▾')),
+      el('div', { class: 'nav-drop-menu', id: 'nav-games-menu', role: 'menu' }, GAMES.map(([p, k]) => el('a', { href: '#' + p, role: 'menuitem', class: isActive(p) ? 'active' : '', 'aria-current': isActive(p) ? 'page' : null,
+        onclick: () => setGames(false) }, t(k)))));
+    drop.addEventListener('focusout', e => { if (!drop.contains(e.relatedTarget)) setGames(false); });
+    return drop;
+  };
+  const mobileLinks = () => [
+    ...NAV.slice(0, SPLIT).map(x => linkOf(x)),
+    el('div', { class: 'mnav-group' }, t('nav.games')),
+    ...GAMES.map(x => linkOf(x, 'mnav-sub')),
+    ...NAV.slice(SPLIT).map(x => linkOf(x)),
+  ];
   const burger = el('button', { class: 'burger', type: 'button', 'aria-expanded': String(menuOpen), 'aria-controls': 'mobile-menu', 'aria-label': t('nav.menu'),
     onclick: () => { menuOpen = !menuOpen; renderHeader(); } }, el('span'), el('span'), el('span'));
   headerEl.replaceChildren(
     el('div', { class: 'hdr-inner' },
       el('a', { class: 'brand', href: '#/', 'aria-label': 'MavSudamerica', title: t('layout.tagline') }, monogram(),
         el('span', { class: 'brand-word' }, 'Mav', el('b', {}, 'Sudamerica'))),
-      el('nav', { class: 'main-nav', 'aria-label': t('nav.main') }, navLinks()),
+      el('nav', { class: 'main-nav', 'aria-label': t('nav.main') }, NAV.slice(0, SPLIT).map(x => linkOf(x)), gamesDrop(), NAV.slice(SPLIT).map(x => linkOf(x))),
       el('div', { class: 'hdr-tools' }, langSwitch(), el('div', { class: 'user-area' }, userArea(false)), burger),
     ),
-    el('div', { class: 'mobile-menu' + (menuOpen ? ' open' : ''), id: 'mobile-menu' }, navLinks(), userArea(true).map(n => (n.tagName === 'A' ? el('a', { href: n.getAttribute('href'), onclick: closeMenu }, n.textContent) : el('button', { class: 'linklike', type: 'button', onclick: () => { closeMenu(); doLogout(); } }, n.textContent)))),
+    el('div', { class: 'mobile-menu' + (menuOpen ? ' open' : ''), id: 'mobile-menu' }, mobileLinks(), userArea(true).map(n => (n.tagName === 'A' ? el('a', { href: n.getAttribute('href'), onclick: closeMenu }, n.textContent) : el('button', { class: 'linklike', type: 'button', onclick: () => { closeMenu(); doLogout(); } }, n.textContent)))),
   );
 }
 function closeMenu() { if (menuOpen) { menuOpen = false; renderHeader(); } }
@@ -128,7 +158,7 @@ function renderFooter() {
   footerEl.replaceChildren(el('div', { class: 'ftr-in' },
     el('a', { class: 'follow', href: 'https://x.com/MavSudamerica', target: '_blank', rel: 'noopener noreferrer' }, xIcon(),
       el('span', {}, t('layout.follow'), el('small', {}, t('layout.followSub')))),
-    el('nav', { class: 'ftr-nav', 'aria-label': t('nav.main') }, NAV.map(([p, k]) => el('a', { href: '#' + p }, t(k)))),
+    el('nav', { class: 'ftr-nav', 'aria-label': t('nav.main') }, [...NAV.slice(0, SPLIT), ...GAMES, ...NAV.slice(SPLIT)].map(([p, k]) => el('a', { href: '#' + p }, t(k)))),
     el('p', { class: 'disclaimer' }, '© MavSudamerica · ' + t('layout.disclaimer')),
   ));
 }
@@ -138,8 +168,13 @@ export function mountLayout() {
   tickerEl = document.getElementById('ticker');
   footerEl = document.getElementById('site-footer');
   renderHeader(); renderFooter(); loadTicker();
-  window.addEventListener('routechange', () => { menuOpen = false; renderHeader(); });
-  window.addEventListener('hashchange', () => renderHeader());
+  window.addEventListener('routechange', () => { menuOpen = false; gamesOpen = false; renderHeader(); });
+  window.addEventListener('hashchange', () => { gamesOpen = false; renderHeader(); });
+  // Games dropdown: close on outside click or Escape (Escape returns focus to its button).
+  document.addEventListener('click', e => { if (gamesOpen && !e.target.closest?.('.nav-drop')) setGames(false); });
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && gamesOpen) { const b = headerEl?.querySelector('.nav-drop-btn'); setGames(false); b?.focus(); }
+  });
   onLangChange(() => { renderHeader(); renderFooter(); renderTicker(); });
   onAuthChange(() => renderHeader());
   clearInterval(tickerTimer); tickerTimer = setInterval(loadTicker, 10 * 60 * 1000);

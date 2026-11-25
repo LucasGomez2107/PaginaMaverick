@@ -221,3 +221,23 @@ table.table-stats{border-collapse:separate;border-spacing:0;width:100%;font-size
   .brand svg{width:34px;height:34px}.brand-word{font-size:1.15rem}
   .hdr-tools{gap:.35rem}.lang-switch button{padding:.3rem .32rem;font-size:.7rem}.burger{width:40px;height:40px}
 }
+
+/* header games dropdown ("Juegos") */
+.nav-drop{position:relative;display:flex}
+.main-nav .nav-drop-btn{align-self:stretch;display:flex;align-items:center;background:none;border:0;cursor:pointer;color:#dbe5ee;
+  font-family:var(--font-display);font-weight:800;font-size:1.05rem;letter-spacing:.05em;text-transform:uppercase;padding:.4rem .42rem;position:relative;white-space:nowrap}
+.main-nav .nav-drop-btn:hover,.main-nav .nav-drop-btn[aria-expanded="true"]{color:#fff}
+.main-nav .nav-drop-btn.active{color:#fff}
+.main-nav .nav-drop-btn.active::after{content:"";position:absolute;left:.42rem;right:.42rem;bottom:0;height:4px;background:var(--royal);box-shadow:0 0 0 1px #fff inset}
+.nav-caret{font-size:.8em;margin-left:.25rem}
+.nav-drop-menu{display:none;position:absolute;top:100%;left:0;z-index:60;min-width:180px;margin-top:6px;background:var(--navy);
+  border:2px solid var(--ink);box-shadow:var(--shadow-sm)}
+.nav-drop.open .nav-drop-menu{display:block}
+.main-nav .nav-drop-menu a{display:block;padding:.6rem .9rem;color:#fff;white-space:nowrap;border-bottom:1px solid rgba(255,255,255,.15);position:static}
+.main-nav .nav-drop-menu a:last-child{border-bottom:0}
+.main-nav .nav-drop-menu a:hover,.main-nav .nav-drop-menu a.active{background:var(--royal);color:#fff}
+.main-nav .nav-drop-menu a.active::after{content:none}
+
+/* mobile menu games group */
+.mnav-group{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--silver);padding:.9rem 0 .1rem;border-bottom:1px solid rgba(255,255,255,.15)}
+.mobile-menu a.mnav-sub{font-size:1.2rem;padding-left:1.4rem}
