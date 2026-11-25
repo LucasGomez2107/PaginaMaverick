@@ -67,7 +67,18 @@ Las predicciones se cierran cuando arranca el partido.
 
 ## Estadísticas
 
-Los datos iniciales de las temporadas son una **base a verificar**, no una fuente oficial. Para actualizarlos con Basketball-Reference:
+- **Temporada en curso:** el plantel, los promedios, las lesiones y el récord se actualizan solos desde ESPN (cada 30 min) mientras la página está prendida.
+- **Temporadas históricas:** salen de ESPN. Desde 1994-95 está el plantel completo con números reales. Para 1980-81 a 1993-94 ESPN solo tiene a los jugadores que seguían en la NBA a principios de los 90, así que algunos (por ejemplo Brad Davis o James Donaldson) aparecen sin números.
+
+Para volver a bajar todo de ESPN (tarda unos minutos):
+
+```bash
+node scripts/fetch-espn-history.js
+```
+
+o solo algunas temporadas: `node scripts/fetch-espn-history.js 2010-11 2011-12`.
+
+Para completar una temporada a mano con Basketball-Reference:
 
 1. Entrá a [basketball-reference.com](https://www.basketball-reference.com) y buscá la temporada de los Mavs.
 2. En la tabla **Per Game**, tocá **Share & Export** → **Get table as CSV**.

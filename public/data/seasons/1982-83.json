@@ -8,36 +8,38 @@
   {
    "name": "Mark Aguirre",
    "slug": "mark-aguirre",
-   "pos": "SF",
+   "pos": "F",
    "age": 23,
-   "gp": null,
-   "gs": null,
-   "mpg": null,
-   "ppg": 24.4,
-   "rpg": null,
-   "apg": null,
-   "spg": null,
-   "bpg": null,
-   "fgp": null,
-   "tpp": null,
-   "ftp": null
+   "espn_id": "3621",
+   "gp": 81,
+   "gs": 75,
+   "mpg": 34.4,
+   "fgp": 0.483,
+   "tpp": 0.211,
+   "ftp": 0.728,
+   "rpg": 6.3,
+   "apg": 4.1,
+   "bpg": 0.3,
+   "spg": 1,
+   "ppg": 24.4
   },
   {
    "name": "Rolando Blackman",
    "slug": "rolando-blackman",
-   "pos": "SG",
+   "pos": "G",
    "age": 23,
-   "gp": null,
-   "gs": null,
-   "mpg": null,
-   "ppg": null,
-   "rpg": null,
-   "apg": null,
-   "spg": null,
-   "bpg": null,
-   "fgp": null,
-   "tpp": null,
-   "ftp": null
+   "espn_id": "3640",
+   "gp": 75,
+   "gs": 62,
+   "mpg": 31.3,
+   "fgp": 0.492,
+   "tpp": 0.2,
+   "ftp": 0.78,
+   "rpg": 3.9,
+   "apg": 2.5,
+   "bpg": 0.4,
+   "spg": 0.5,
+   "ppg": 17.7
   },
   {
    "name": "Brad Davis",
@@ -73,5 +75,6 @@
    "tpp": null,
    "ftp": null
   }
- ]
+ ],
+ "source": "espn-partial"
 }

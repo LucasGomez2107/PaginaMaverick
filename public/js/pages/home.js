@@ -15,7 +15,7 @@ registerStrings({
     'home.tGuess': 'Adiviná el jugador', 'home.tGuessD': 'Un desafío nuevo cada día',
     'home.tRanking': 'Ranking', 'home.tRankingD': 'Quién manda en la comunidad',
     'home.top5': 'Top 5 del prode', 'home.topAll': 'Ver ranking completo', 'home.noTop': 'Nadie sumó puntos todavía. ¡Sé el primero!',
-    'home.final': 'Final', 'home.home': 'Local', 'home.away': 'Visitante', 'home.matchday': 'Matchday', 'home.comments': 'comentarios',
+    'home.dallas': 'Dallas partido a partido', 'home.dLast': 'Último', 'home.dNext': 'Próximo', 'home.dNone': 'Sin partidos programados', 'home.dLive': 'EN VIVO', 'home.dNoLast': 'Sin resultados', 'home.final': 'Final', 'home.home': 'Local', 'home.away': 'Visitante', 'home.matchday': 'Matchday', 'home.comments': 'comentarios',
   },
   en: {
     'home.title': 'Home', 'home.heroKicker': 'Mavs from South America', 'home.heroTitle': 'Matchday, every day',
@@ -30,7 +30,7 @@ registerStrings({
     'home.tGuess': 'Guess the player', 'home.tGuessD': 'A new challenge every day',
     'home.tRanking': 'Ranking', 'home.tRankingD': 'Who rules the community',
     'home.top5': 'Prode top 5', 'home.topAll': 'See full ranking', 'home.noTop': 'Nobody has scored yet. Be the first!',
-    'home.final': 'Final', 'home.home': 'Home', 'home.away': 'Away', 'home.matchday': 'Matchday', 'home.comments': 'comments',
+    'home.dallas': 'Dallas game by game', 'home.dLast': 'Last', 'home.dNext': 'Next', 'home.dNone': 'No games scheduled', 'home.dLive': 'LIVE', 'home.dNoLast': 'No results', 'home.final': 'Final', 'home.home': 'Home', 'home.away': 'Away', 'home.matchday': 'Matchday', 'home.comments': 'comments',
   },
   pt: {
     'home.title': 'Início', 'home.heroKicker': 'Mavs da América do Sul', 'home.heroTitle': 'Dia de jogo, todos os dias',
@@ -45,7 +45,7 @@ registerStrings({
     'home.tGuess': 'Adivinhe o jogador', 'home.tGuessD': 'Um desafio novo por dia',
     'home.tRanking': 'Ranking', 'home.tRankingD': 'Quem manda na comunidade',
     'home.top5': 'Top 5 do bolão', 'home.topAll': 'Ver ranking completo', 'home.noTop': 'Ninguém pontuou ainda. Seja o primeiro!',
-    'home.final': 'Final', 'home.home': 'Casa', 'home.away': 'Fora', 'home.matchday': 'Matchday', 'home.comments': 'comentários',
+    'home.dallas': 'Dallas jogo a jogo', 'home.dLast': 'Último', 'home.dNext': 'Próximo', 'home.dNone': 'Sem jogos agendados', 'home.dLive': 'AO VIVO', 'home.dNoLast': 'Sem resultados', 'home.final': 'Final', 'home.home': 'Casa', 'home.away': 'Fora', 'home.matchday': 'Matchday', 'home.comments': 'comentários',
   },
 });
 
@@ -66,6 +66,26 @@ function countdown(iso) {
   };
   const h = setInterval(() => { if (!tick()) clearInterval(h); }, 1000); tick();
   return { box, stop: () => clearInterval(h) };
+}
+
+function dallasCard(x) {
+  const vsTxt = home => home ? t('common.vs') : t('common.at');
+  const last = x.result && x.score != null
+    ? el('div', { class: 'dx-line' }, el('small', {}, t('home.dLast')),
+      el('span', { class: `badge ${x.result === 'W' ? 'badge-win' : x.result === 'T' ? '' : 'badge-loss'}` }, x.result),
+      el('b', { class: 'mono' }, `${x.score}-${x.opp_score}`),
+      el('span', { class: 'dx-opp' }, `${vsTxt(x.home)} ${x.opponent}`),
+      el('span', { class: 'dx-date mono' }, fmtDate(x.date, { day: 'numeric', month: 'short' })))
+    : el('div', { class: 'dx-line muted' }, el('small', {}, t('home.dLast')), t('home.dNoLast'));
+  const n = x.next;
+  const next = n
+    ? el('div', { class: 'dx-line' }, el('small', {}, t('home.dNext')),
+      n.live ? el('span', { class: 'badge badge-loss' }, t('home.dLive')) : null,
+      el('span', { class: 'dx-opp' }, `${vsTxt(n.home)} ${n.opponent}`),
+      el('span', { class: 'dx-date mono' }, fmtDateTime(n.date)))
+    : el('div', { class: 'dx-line muted' }, el('small', {}, t('home.dNext')), t('home.dNone'));
+  return el('div', { class: `dx-card dx-${x.key}` },
+    el('div', { class: 'dx-head' }, el('b', {}, x.name), el('span', { class: 'dx-lg mono' }, x.league)), last, next);
 }
 
 function tile(href, num, title, desc) {
@@ -90,6 +110,8 @@ export default {
     const diaryBox = el('div', { class: 'stack' });
     const topBox = el('div', { class: 'card' });
     container.append(el('div', { class: 'grid-2 match-row' }, nextBox, lastBox));
+    const dallasBox = el('div', { class: 'dx-grid' });
+    container.append(el('section', { class: 'stack home-dallas' }, el('h2', {}, t('home.dallas')), dallasBox));
     const rosterBox = el('div', { class: 'rs-strip', role: 'list' });
     container.append(el('section', { class: 'stack home-roster' },
       el('div', { class: 'row-between' }, el('h2', {}, t('roster.home')), el('a', { class: 'btn btn-ghost btn-sm', href: '#/roster' }, t('roster.all-link'))),
@@ -104,6 +126,10 @@ export default {
     const [nx, ls, di, lb, ro] = await Promise.all([
       first('/games?status=scheduled&limit=1'), first('/games?status=final&limit=1'), first('/diary?limit=3'), first('/prode/leaderboard'),
       first('/roster')]);
+    // Dallas teams: last result + next game
+    const dteams = (await first('/dallas'))?.teams || [];
+    if (!dteams.length) dallasBox.closest('section').remove();
+    else dallasBox.append(...dteams.map(dallasCard));
     // roster strip
     const squad = ro?.details || [];
     if (squad.length) rosterBox.append(...squad.map(miniCard));

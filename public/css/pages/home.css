@@ -46,3 +46,16 @@
 .mini-lb .nm{flex:1;font-weight:700;overflow:hidden;text-overflow:ellipsis}
 .mini-lb .me{background:#fff2b8}
 .leaders b{text-align:left}
+
+/* Dallas game by game */
+.home-dallas h2 { margin: 0; }
+.dx-grid { display: grid; gap: .8rem; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }
+.dx-card { background: var(--white, #fff); border: var(--line, 2px solid #061922); box-shadow: var(--shadow-sm, 3px 3px 0 #061922); padding: .7rem .9rem; display: flex; flex-direction: column; gap: .35rem; }
+.dx-head { display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px dashed var(--silver, #BBC4CA); padding-bottom: .3rem; }
+.dx-head b { font-family: var(--font-display); font-size: 1.25rem; text-transform: uppercase; color: var(--navy, #002B5E); }
+.dx-lg { font-size: .72rem; color: var(--muted, #4A5B68); }
+.dx-line { display: flex; flex-wrap: wrap; align-items: center; gap: .25rem .5rem; font-size: .88rem; }
+.dx-line small { flex: 0 0 4.2rem; font-size: .66rem; text-transform: uppercase; letter-spacing: .08em; color: var(--muted, #4A5B68); }
+.dx-opp { flex: 1 1 auto; min-width: 0; }
+.dx-date { font-size: .75rem; color: var(--muted, #4A5B68); }
+.home-dallas, .home-roster { margin-top: 1.4rem; }

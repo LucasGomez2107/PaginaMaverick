@@ -11,7 +11,7 @@ registerStrings({
     'stats.perGame': 'Promedios por partido', 'stats.sortHint': 'Tocá una columna para ordenar',
     'stats.career': 'Con los Mavs', 'stats.careerAvg': 'Promedio ponderado con Dallas', 'stats.seasons': 'temporadas',
     'stats.ppgTrend': 'Puntos por partido por temporada', 'stats.noPlayer': 'No encontramos a este jugador.',
-    'stats.footnote': 'Datos: base inicial, pueden contener errores; se actualizan importando CSV de Basketball-Reference.',
+    'stats.footnote': 'Datos: ESPN. La temporada en curso se actualiza sola; antes de 1994-95 algunos jugadores aparecen sin números.',
     'stats.po.champion': 'Campeón', 'stats.po.finals': 'Finales', 'stats.po.conf_finals': 'Final de conferencia',
     'stats.po.second_round': 'Segunda ronda', 'stats.po.first_round': 'Primera ronda', 'stats.po.missed': 'Sin playoffs', 'stats.po.in_progress': 'En curso',
     'stats.games': 'PJ', 'stats.team': 'Equipo', 'stats.players': 'Jugadores', 'stats.wpct': 'Efectividad',
@@ -26,7 +26,7 @@ registerStrings({
     'stats.perGame': 'Per-game averages', 'stats.sortHint': 'Tap a column to sort',
     'stats.career': 'With the Mavs', 'stats.careerAvg': 'Games-weighted average with Dallas', 'stats.seasons': 'seasons',
     'stats.ppgTrend': 'Points per game by season', 'stats.noPlayer': 'We could not find this player.',
-    'stats.footnote': 'Data: initial dataset, may contain errors; updated by importing Basketball-Reference CSVs.',
+    'stats.footnote': 'Data: ESPN. The current season updates automatically; before 1994-95 some players have no numbers.',
     'stats.po.champion': 'Champions', 'stats.po.finals': 'Finals', 'stats.po.conf_finals': 'Conference finals',
     'stats.po.second_round': 'Second round', 'stats.po.first_round': 'First round', 'stats.po.missed': 'Missed playoffs', 'stats.po.in_progress': 'In progress',
     'stats.games': 'GP', 'stats.team': 'Team', 'stats.players': 'Players', 'stats.wpct': 'Win %',
@@ -41,7 +41,7 @@ registerStrings({
     'stats.perGame': 'Médias por jogo', 'stats.sortHint': 'Toque numa coluna para ordenar',
     'stats.career': 'Com os Mavs', 'stats.careerAvg': 'Média ponderada por jogos com Dallas', 'stats.seasons': 'temporadas',
     'stats.ppgTrend': 'Pontos por jogo por temporada', 'stats.noPlayer': 'Não encontramos este jogador.',
-    'stats.footnote': 'Dados: base inicial, podem conter erros; atualizados importando CSV do Basketball-Reference.',
+    'stats.footnote': 'Dados: ESPN. A temporada atual se atualiza sozinha; antes de 1994-95 alguns jogadores aparecem sem números.',
     'stats.po.champion': 'Campeão', 'stats.po.finals': 'Finais', 'stats.po.conf_finals': 'Final de conferência',
     'stats.po.second_round': 'Segunda rodada', 'stats.po.first_round': 'Primeira rodada', 'stats.po.missed': 'Sem playoffs', 'stats.po.in_progress': 'Em andamento',
     'stats.games': 'J', 'stats.team': 'Time', 'stats.players': 'Jogadores', 'stats.wpct': 'Aproveit.',
@@ -98,6 +98,8 @@ async function renderOverview(container) {
   const body = el('div', { class: 'stack' }, el('div', { class: 'spinner' }));
   wrap.append(body);
   const seasons = await getJSON('/data/seasons/index.json');
+  // The season in progress gets its live record (synced games) instead of the static one.
+  if (Array.isArray(seasons)) for (const s of seasons) if (s.playoff === 'in_progress') await mergeLiveSeason(s);
   body.replaceChildren();
   if (!Array.isArray(seasons) || !seasons.length) {
     body.append(el('div', { class: 'empty' }, t('stats.noSeasons')));

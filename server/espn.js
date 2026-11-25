@@ -111,22 +111,27 @@ function scheduleUrl(team, query = '') {
   return `${BASE}/${team.sport}/${team.lg}/teams/${team.id}/schedule${query}`;
 }
 
-async function lastResult(team) {
-  const urls = [scheduleUrl(team), `${BASE}/${team.sport}/${team.lg}/teams/${team.abbr}/schedule`];
+/** Last finished game and next scheduled game of a team (ESPN), or null if ESPN fails. */
+async function teamGames(team) {
+  const y = new Date().getUTCFullYear();
+  // Default schedule first; in the off-season it may already be next year's calendar with no finished game,
+  // so fall back to the previous seasons to find the last result.
+  const urls = [scheduleUrl(team), `${BASE}/${team.sport}/${team.lg}/teams/${team.abbr}/schedule`,
+    scheduleUrl(team, `?season=${y}`), scheduleUrl(team, `?season=${y - 1}`)];
+  let last = null, next = null, ok = false;
   for (const url of urls) {
     try {
       const data = await fetchJson(url);
-      const events = (data?.events || [])
-        .filter(ev => ev?.competitions?.[0]?.status?.type?.completed)
-        .sort((a, b) => new Date(b.date) - new Date(a.date));
-      for (const ev of events) {
-        const p = parseEvent(ev, team);
-        if (p && p.result) return p;
-      }
-      return null;
-    } catch { /* try next */ }
+      ok = true;
+      const parsed = (data?.events || []).map(ev => parseEvent(ev, team)).filter(Boolean)
+        .sort((a, b) => new Date(a.date) - new Date(b.date));
+      last ||= [...parsed].reverse().find(p => p.status === 'final' && p.result) || null;
+      next ||= parsed.find(p => p.status === 'live')
+        || parsed.find(p => p.status === 'scheduled' && new Date(p.date).getTime() > Date.now() - 4 * 3600e3) || null;
+      if (last && next) break;
+    } catch { /* try next url */ }
   }
-  return null;
+  return ok ? { last, next } : null;
 }
 
 // ---------- Dallas teams ----------
@@ -135,12 +140,15 @@ let dallasInflight = null;
 export async function getDallas() {
   if (dallasInflight) return dallasInflight;
   dallasInflight = (async () => {
-    const espn = await Promise.all(TEAMS.map(t => lastResult(t).catch(() => null)));
+    const games = await Promise.all(TEAMS.map(t => teamGames(t).catch(() => null)));
+    const espn = games.map(g => g?.last || null);
     const overrides = new Map(db.prepare('SELECT * FROM dallas_overrides').all().map(r => [r.key, r]));
     return TEAMS.map((team, i) => {
       const e = espn[i];
       const o = overrides.get(team.key);
-      const base = { key: team.key, name: team.name, league: team.league };
+      const n = games[i]?.next;
+      const base = { key: team.key, name: team.name, league: team.league,
+        next: n ? { opponent: n.opponent, opponent_abbr: n.opponent_abbr, date: n.date, home: n.home, live: n.status === 'live' } : null };
       const manual = o && {
         ...base, opponent: o.opponent, score: o.score, opp_score: o.opp_score, result: o.result,
         date: o.date, home: o.home == null ? null : !!o.home, source: 'manual',

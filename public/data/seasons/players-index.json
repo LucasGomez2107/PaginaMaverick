@@ -1,21 +1,97 @@
 {
+ "a-c-green": {
+  "name": "A.C. Green",
+  "seasons": [
+   "1996-97",
+   "1997-98",
+   "1998-99"
+  ]
+ },
+ "a-j-lawson": {
+  "name": "A.J. Lawson",
+  "seasons": [
+   "2022-23",
+   "2023-24"
+  ]
+ },
+ "aaron-harrison": {
+  "name": "Aaron Harrison",
+  "seasons": [
+   "2017-18"
+  ]
+ },
  "abdul-jeelani": {
   "name": "Abdul Jeelani",
   "seasons": [
    "1980-81"
   ]
  },
+ "adam-harrington": {
+  "name": "Adam Harrington",
+  "seasons": [
+   "2002-03"
+  ]
+ },
+ "adrian-caldwell": {
+  "name": "Adrian Caldwell",
+  "seasons": [
+   "1997-98"
+  ]
+ },
  "adrian-griffin": {
   "name": "Adrian Griffin",
   "seasons": [
-   "2005-06",
-   "2006-07"
+   "2001-02",
+   "2002-03",
+   "2005-06"
+  ]
+ },
+ "aj-hammons": {
+  "name": "AJ Hammons",
+  "seasons": [
+   "2016-17"
+  ]
+ },
+ "aj-johnson": {
+  "name": "AJ Johnson",
+  "seasons": [
+   "2025-26"
   ]
  },
  "al-farouq-aminu": {
   "name": "Al-Farouq Aminu",
   "seasons": [
    "2014-15"
+  ]
+ },
+ "alan-henderson": {
+  "name": "Alan Henderson",
+  "seasons": [
+   "2004-05"
+  ]
+ },
+ "alex-fudge": {
+  "name": "Alex Fudge",
+  "seasons": [
+   "2023-24"
+  ]
+ },
+ "alexis-ajinca": {
+  "name": "Alexis Ajinca",
+  "seasons": [
+   "2010-11"
+  ]
+ },
+ "amar-e-stoudemire": {
+  "name": "Amar'e Stoudemire",
+  "seasons": [
+   "2014-15"
+  ]
+ },
+ "andrew-bogut": {
+  "name": "Andrew Bogut",
+  "seasons": [
+   "2016-17"
   ]
  },
  "antawn-jamison": {
@@ -29,6 +105,95 @@
   "seasons": [
    "2024-25",
    "2025-26"
+  ]
+ },
+ "anthony-johnson": {
+  "name": "Anthony Johnson",
+  "seasons": [
+   "2006-07"
+  ]
+ },
+ "anthony-morrow": {
+  "name": "Anthony Morrow",
+  "seasons": [
+   "2012-13"
+  ]
+ },
+ "antoine-rigaudeau": {
+  "name": "Antoine Rigaudeau",
+  "seasons": [
+   "2002-03"
+  ]
+ },
+ "antoine-walker": {
+  "name": "Antoine Walker",
+  "seasons": [
+   "2003-04"
+  ]
+ },
+ "antoine-wright": {
+  "name": "Antoine Wright",
+  "seasons": [
+   "2007-08",
+   "2008-09"
+  ]
+ },
+ "antonius-cleveland": {
+  "name": "Antonius Cleveland",
+  "seasons": [
+   "2017-18",
+   "2019-20"
+  ]
+ },
+ "austin-croshere": {
+  "name": "Austin Croshere",
+  "seasons": [
+   "2006-07"
+  ]
+ },
+ "avery-johnson": {
+  "name": "Avery Johnson",
+  "seasons": [
+   "2001-02",
+   "2002-03"
+  ]
+ },
+ "ben-bentil": {
+  "name": "Ben Bentil",
+  "seasons": [
+   "2016-17"
+  ]
+ },
+ "bernard-james": {
+  "name": "Bernard James",
+  "seasons": [
+   "2012-13",
+   "2013-14",
+   "2014-15"
+  ]
+ },
+ "bill-curley": {
+  "name": "Bill Curley",
+  "seasons": [
+   "2000-01"
+  ]
+ },
+ "bill-wennington": {
+  "name": "Bill Wennington",
+  "seasons": [
+   "1985-86",
+   "1986-87",
+   "1987-88",
+   "1988-89",
+   "1989-90"
+  ]
+ },
+ "boban-marjanovic": {
+  "name": "Boban Marjanovic",
+  "seasons": [
+   "2019-20",
+   "2020-21",
+   "2021-22"
   ]
  },
  "brad-davis": {
@@ -46,7 +211,9 @@
   "name": "Brandan Wright",
   "seasons": [
    "2011-12",
-   "2013-14"
+   "2012-13",
+   "2013-14",
+   "2014-15"
   ]
  },
  "brandon-bass": {
@@ -56,9 +223,16 @@
    "2008-09"
   ]
  },
+ "brandon-knight": {
+  "name": "Brandon Knight",
+  "seasons": [
+   "2021-22"
+  ]
+ },
  "brandon-williams": {
   "name": "Brandon Williams",
   "seasons": [
+   "2023-24",
    "2024-25",
    "2025-26"
   ]
@@ -78,11 +252,38 @@
    "2011-12"
   ]
  },
+ "bruno-sundov": {
+  "name": "Bruno Sundov",
+  "seasons": [
+   "1998-99",
+   "1999-00"
+  ]
+ },
+ "bubba-wells": {
+  "name": "Bubba Wells",
+  "seasons": [
+   "1997-98"
+  ]
+ },
  "caleb-martin": {
   "name": "Caleb Martin",
   "seasons": [
+   "2024-25",
    "2025-26",
    "2026-27"
+  ]
+ },
+ "calvin-booth": {
+  "name": "Calvin Booth",
+  "seasons": [
+   "2000-01",
+   "2004-05"
+  ]
+ },
+ "carlik-jones": {
+  "name": "Carlik Jones",
+  "seasons": [
+   "2021-22"
   ]
  },
  "caron-butler": {
@@ -92,6 +293,14 @@
    "2010-11"
   ]
  },
+ "cedric-ceballos": {
+  "name": "Cedric Ceballos",
+  "seasons": [
+   "1997-98",
+   "1998-99",
+   "1999-00"
+  ]
+ },
  "chandler-parsons": {
   "name": "Chandler Parsons",
   "seasons": [
@@ -99,10 +308,84 @@
    "2015-16"
   ]
  },
+ "charlie-bell": {
+  "name": "Charlie Bell",
+  "seasons": [
+   "2001-02"
+  ]
+ },
+ "charlie-brown-jr": {
+  "name": "Charlie Brown Jr.",
+  "seasons": [
+   "2021-22"
+  ]
+ },
+ "charlie-villanueva": {
+  "name": "Charlie Villanueva",
+  "seasons": [
+   "2014-15",
+   "2015-16"
+  ]
+ },
+ "cherokee-parks": {
+  "name": "Cherokee Parks",
+  "seasons": [
+   "1995-96"
+  ]
+ },
+ "chris-anstey": {
+  "name": "Chris Anstey",
+  "seasons": [
+   "1997-98",
+   "1998-99"
+  ]
+ },
+ "chris-douglas-roberts": {
+  "name": "Chris Douglas-Roberts",
+  "seasons": [
+   "2012-13"
+  ]
+ },
+ "chris-gatling": {
+  "name": "Chris Gatling",
+  "seasons": [
+   "1996-97"
+  ]
+ },
+ "chris-kaman": {
+  "name": "Chris Kaman",
+  "seasons": [
+   "2012-13"
+  ]
+ },
+ "chris-silva": {
+  "name": "Chris Silva",
+  "seasons": [
+   "2022-23"
+  ]
+ },
+ "chris-wright": {
+  "name": "Chris Wright",
+  "seasons": [
+   "2012-13"
+  ]
+ },
+ "christian-laettner": {
+  "name": "Christian Laettner",
+  "seasons": [
+   "2000-01"
+  ]
+ },
  "christian-wood": {
   "name": "Christian Wood",
   "seasons": [
    "2022-23"
+  ]
+ },
+ "chucky-brown": {
+  "name": "Chucky Brown",
+  "seasons": [
+   "1993-94"
   ]
  },
  "cooper-flagg": {
@@ -112,17 +395,55 @@
    "2026-27"
   ]
  },
+ "corey-brewer": {
+  "name": "Corey Brewer",
+  "seasons": [
+   "2010-11"
+  ]
+ },
+ "courtney-alexander": {
+  "name": "Courtney Alexander",
+  "seasons": [
+   "2000-01"
+  ]
+ },
+ "courtney-lee": {
+  "name": "Courtney Lee",
+  "seasons": [
+   "2018-19",
+   "2019-20"
+  ]
+ },
  "d-angelo-russell": {
   "name": "D'Angelo Russell",
   "seasons": [
    "2025-26"
   ]
  },
+ "dahntay-jones": {
+  "name": "Dahntay Jones",
+  "seasons": [
+   "2012-13"
+  ]
+ },
  "dale-ellis": {
   "name": "Dale Ellis",
   "seasons": [
    "1983-84",
-   "1984-85"
+   "1984-85",
+   "1985-86"
+  ]
+ },
+ "damon-jones": {
+  "name": "Damon Jones",
+  "seasons": [
+   "1999-00"
+  ]
+ },
+ "dan-dickau": {
+  "name": "Dan Dickau",
+  "seasons": [
+   "2004-05"
   ]
  },
  "daniel-gafford": {
@@ -134,12 +455,30 @@
    "2026-27"
   ]
  },
+ "danny-fortson": {
+  "name": "Danny Fortson",
+  "seasons": [
+   "2003-04"
+  ]
+ },
+ "danny-manning": {
+  "name": "Danny Manning",
+  "seasons": [
+   "2001-02"
+  ]
+ },
  "dante-exum": {
   "name": "Dante Exum",
   "seasons": [
    "2023-24",
-   "2024-25",
-   "2025-26"
+   "2024-25"
+  ]
+ },
+ "darrell-armstrong": {
+  "name": "Darrell Armstrong",
+  "seasons": [
+   "2004-05",
+   "2005-06"
   ]
  },
  "darren-collison": {
@@ -148,16 +487,59 @@
    "2012-13"
   ]
  },
- "davis-bertans": {
-  "name": "Davis Bertāns",
+ "darren-morningstar": {
+  "name": "Darren Morningstar",
   "seasons": [
-   "2021-22"
+   "1993-94"
+  ]
+ },
+ "darrick-martin": {
+  "name": "Darrick Martin",
+  "seasons": [
+   "2001-02"
+  ]
+ },
+ "daryl-macon": {
+  "name": "Daryl Macon",
+  "seasons": [
+   "2018-19"
+  ]
+ },
+ "david-lee": {
+  "name": "David Lee",
+  "seasons": [
+   "2015-16"
+  ]
+ },
+ "david-wood": {
+  "name": "David Wood",
+  "seasons": [
+   "1995-96"
+  ]
+ },
+ "davis-bertans": {
+  "name": "Davis Bertans",
+  "seasons": [
+   "2021-22",
+   "2022-23"
   ]
  },
  "deandre-jordan": {
   "name": "DeAndre Jordan",
   "seasons": [
    "2018-19"
+  ]
+ },
+ "deandre-liggins": {
+  "name": "DeAndre Liggins",
+  "seasons": [
+   "2016-17"
+  ]
+ },
+ "dejuan-blair": {
+  "name": "DeJuan Blair",
+  "seasons": [
+   "2013-14"
   ]
  },
  "delon-wright": {
@@ -172,6 +554,18 @@
    "2011-12"
   ]
  },
+ "dennis-rodman": {
+  "name": "Dennis Rodman",
+  "seasons": [
+   "1999-00"
+  ]
+ },
+ "dennis-scott": {
+  "name": "Dennis Scott",
+  "seasons": [
+   "1997-98"
+  ]
+ },
  "dennis-smith-jr": {
   "name": "Dennis Smith Jr.",
   "seasons": [
@@ -184,8 +578,13 @@
   "seasons": [
    "2023-24",
    "2024-25",
-   "2025-26",
-   "2026-27"
+   "2025-26"
+  ]
+ },
+ "derek-fisher": {
+  "name": "Derek Fisher",
+  "seasons": [
+   "2012-13"
   ]
  },
  "derek-harper": {
@@ -200,7 +599,9 @@
    "1989-90",
    "1990-91",
    "1991-92",
-   "1992-93"
+   "1992-93",
+   "1993-94",
+   "1996-97"
   ]
  },
  "deron-williams": {
@@ -220,12 +621,15 @@
   "name": "DeSagana Diop",
   "seasons": [
    "2005-06",
-   "2006-07"
+   "2006-07",
+   "2007-08",
+   "2008-09"
   ]
  },
  "deshawn-stevenson": {
   "name": "DeShawn Stevenson",
   "seasons": [
+   "2009-10",
    "2010-11"
   ]
  },
@@ -234,7 +638,16 @@
   "seasons": [
    "1985-86",
    "1986-87",
-   "1987-88"
+   "1987-88",
+   "1988-89"
+  ]
+ },
+ "devean-george": {
+  "name": "Devean George",
+  "seasons": [
+   "2006-07",
+   "2007-08",
+   "2008-09"
   ]
  },
  "devin-harris": {
@@ -246,7 +659,24 @@
    "2007-08",
    "2013-14",
    "2014-15",
-   "2015-16"
+   "2015-16",
+   "2016-17",
+   "2017-18",
+   "2018-19"
+  ]
+ },
+ "dexter-dennis": {
+  "name": "Dexter Dennis",
+  "seasons": [
+   "2023-24"
+  ]
+ },
+ "didier-ilunga-mbenga": {
+  "name": "Didier Ilunga-Mbenga",
+  "seasons": [
+   "2004-05",
+   "2005-06",
+   "2006-07"
   ]
  },
  "dirk-nowitzki": {
@@ -275,12 +705,47 @@
    "2018-19"
   ]
  },
+ "dominique-jones": {
+  "name": "Dominique Jones",
+  "seasons": [
+   "2010-11",
+   "2011-12",
+   "2012-13"
+  ]
+ },
+ "donald-hodge": {
+  "name": "Donald Hodge",
+  "seasons": [
+   "1991-92",
+   "1992-93",
+   "1993-94",
+   "1994-95",
+   "1995-96"
+  ]
+ },
+ "donnell-harvey": {
+  "name": "Donnell Harvey",
+  "seasons": [
+   "2000-01",
+   "2001-02"
+  ]
+ },
  "dorian-finney-smith": {
   "name": "Dorian Finney-Smith",
   "seasons": [
+   "2016-17",
+   "2017-18",
+   "2018-19",
    "2019-20",
    "2020-21",
-   "2021-22"
+   "2021-22",
+   "2022-23"
+  ]
+ },
+ "doug-christie": {
+  "name": "Doug Christie",
+  "seasons": [
+   "2005-06"
   ]
  },
  "doug-mcdermott": {
@@ -289,9 +754,26 @@
    "2017-18"
   ]
  },
+ "doug-smith": {
+  "name": "Doug Smith",
+  "seasons": [
+   "1991-92",
+   "1992-93",
+   "1993-94",
+   "1994-95"
+  ]
+ },
+ "drew-gooden": {
+  "name": "Drew Gooden",
+  "seasons": [
+   "2009-10"
+  ]
+ },
  "dwight-powell": {
   "name": "Dwight Powell",
   "seasons": [
+   "2014-15",
+   "2015-16",
    "2016-17",
    "2017-18",
    "2018-19",
@@ -300,7 +782,36 @@
    "2021-22",
    "2022-23",
    "2023-24",
-   "2024-25"
+   "2024-25",
+   "2025-26"
+  ]
+ },
+ "ed-o-bannon": {
+  "name": "Ed O'Bannon",
+  "seasons": [
+   "1996-97"
+  ]
+ },
+ "eddie-jones": {
+  "name": "Eddie Jones",
+  "seasons": [
+   "2007-08"
+  ]
+ },
+ "eddy-curry": {
+  "name": "Eddy Curry",
+  "seasons": [
+   "2012-13"
+  ]
+ },
+ "eduardo-najera": {
+  "name": "Eduardo Najera",
+  "seasons": [
+   "2000-01",
+   "2001-02",
+   "2002-03",
+   "2003-04",
+   "2009-10"
   ]
  },
  "elton-brand": {
@@ -309,9 +820,22 @@
    "2012-13"
   ]
  },
+ "eric-montross": {
+  "name": "Eric Montross",
+  "seasons": [
+   "1996-97"
+  ]
+ },
+ "eric-riley": {
+  "name": "Eric Riley",
+  "seasons": [
+   "1997-98"
+  ]
+ },
  "erick-dampier": {
   "name": "Erick Dampier",
   "seasons": [
+   "2004-05",
    "2005-06",
    "2006-07",
    "2007-08",
@@ -319,18 +843,128 @@
    "2009-10"
   ]
  },
+ "erick-strickland": {
+  "name": "Erick Strickland",
+  "seasons": [
+   "1996-97",
+   "1997-98",
+   "1998-99",
+   "1999-00"
+  ]
+ },
+ "eugene-omoruyi": {
+  "name": "Eugene Omoruyi",
+  "seasons": [
+   "2021-22"
+  ]
+ },
+ "evan-eschmeyer": {
+  "name": "Evan Eschmeyer",
+  "seasons": [
+   "2001-02",
+   "2002-03"
+  ]
+ },
+ "facundo-campazzo": {
+  "name": "Facundo Campazzo",
+  "seasons": [
+   "2022-23"
+  ]
+ },
  "fat-lever": {
   "name": "Fat Lever",
   "seasons": [
    "1990-91",
    "1991-92",
-   "1992-93"
+   "1992-93",
+   "1993-94"
+  ]
+ },
+ "frank-ntilikina": {
+  "name": "Frank Ntilikina",
+  "seasons": [
+   "2021-22",
+   "2022-23"
+  ]
+ },
+ "fred-roberts": {
+  "name": "Fred Roberts",
+  "seasons": [
+   "1996-97"
+  ]
+ },
+ "gal-mekel": {
+  "name": "Gal Mekel",
+  "seasons": [
+   "2013-14"
+  ]
+ },
+ "gary-trent": {
+  "name": "Gary Trent",
+  "seasons": [
+   "1998-99",
+   "1999-00",
+   "2000-01"
+  ]
+ },
+ "george-king": {
+  "name": "George King",
+  "seasons": [
+   "2021-22"
+  ]
+ },
+ "george-mccloud": {
+  "name": "George McCloud",
+  "seasons": [
+   "1994-95",
+   "1995-96",
+   "1996-97"
+  ]
+ },
+ "gerald-green": {
+  "name": "Gerald Green",
+  "seasons": [
+   "2008-09"
+  ]
+ },
+ "gian-clavell": {
+  "name": "Gian Clavell",
+  "seasons": [
+   "2017-18"
   ]
  },
  "grant-williams": {
   "name": "Grant Williams",
   "seasons": [
    "2023-24"
+  ]
+ },
+ "greg-brown-iii": {
+  "name": "Greg Brown III",
+  "seasons": [
+   "2023-24"
+  ]
+ },
+ "greg-buckner": {
+  "name": "Greg Buckner",
+  "seasons": [
+   "1999-00",
+   "2000-01",
+   "2001-02",
+   "2006-07"
+  ]
+ },
+ "greg-dreiling": {
+  "name": "Greg Dreiling",
+  "seasons": [
+   "1993-94",
+   "1996-97"
+  ]
+ },
+ "greg-smith": {
+  "name": "Greg Smith",
+  "seasons": [
+   "2014-15"
   ]
  },
  "harrison-barnes": {
@@ -341,9 +975,42 @@
    "2018-19"
   ]
  },
+ "herb-williams": {
+  "name": "Herb Williams",
+  "seasons": [
+   "1988-89",
+   "1989-90",
+   "1990-91",
+   "1991-92"
+  ]
+ },
+ "howard-eisley": {
+  "name": "Howard Eisley",
+  "seasons": [
+   "2000-01"
+  ]
+ },
+ "hubert-davis": {
+  "name": "Hubert Davis",
+  "seasons": [
+   "1997-98",
+   "1998-99",
+   "1999-00",
+   "2000-01"
+  ]
+ },
+ "ian-mahinmi": {
+  "name": "Ian Mahinmi",
+  "seasons": [
+   "2010-11",
+   "2011-12"
+  ]
+ },
  "j-j-barea": {
   "name": "J.J. Barea",
   "seasons": [
+   "2006-07",
+   "2007-08",
    "2008-09",
    "2009-10",
    "2010-11",
@@ -351,7 +1018,8 @@
    "2015-16",
    "2016-17",
    "2017-18",
-   "2018-19"
+   "2018-19",
+   "2019-20"
   ]
  },
  "jaden-hardy": {
@@ -363,6 +1031,14 @@
    "2025-26"
   ]
  },
+ "jae-crowder": {
+  "name": "Jae Crowder",
+  "seasons": [
+   "2012-13",
+   "2013-14",
+   "2014-15"
+  ]
+ },
  "jalen-brunson": {
   "name": "Jalen Brunson",
   "seasons": [
@@ -372,6 +1048,18 @@
    "2021-22"
   ]
  },
+ "jalen-jones": {
+  "name": "Jalen Jones",
+  "seasons": [
+   "2017-18"
+  ]
+ },
+ "jamaal-magloire": {
+  "name": "Jamaal Magloire",
+  "seasons": [
+   "2007-08"
+  ]
+ },
  "jamal-mashburn": {
   "name": "Jamal Mashburn",
   "seasons": [
@@ -379,6 +1067,18 @@
    "1994-95",
    "1995-96",
    "1996-97"
+  ]
+ },
+ "jameel-warney": {
+  "name": "Jameel Warney",
+  "seasons": [
+   "2017-18"
+  ]
+ },
+ "jameer-nelson": {
+  "name": "Jameer Nelson",
+  "seasons": [
+   "2014-15"
   ]
  },
  "james-donaldson": {
@@ -393,16 +1093,60 @@
    "1990-91"
   ]
  },
+ "james-johnson": {
+  "name": "James Johnson",
+  "seasons": [
+   "2020-21"
+  ]
+ },
+ "james-singleton": {
+  "name": "James Singleton",
+  "seasons": [
+   "2008-09",
+   "2009-10"
+  ]
+ },
+ "jamie-watson": {
+  "name": "Jamie Watson",
+  "seasons": [
+   "1996-97"
+  ]
+ },
+ "jaquori-mclaughlin": {
+  "name": "JaQuori McLaughlin",
+  "seasons": [
+   "2021-22"
+  ]
+ },
+ "jared-cunningham": {
+  "name": "Jared Cunningham",
+  "seasons": [
+   "2012-13"
+  ]
+ },
+ "jarrod-uthoff": {
+  "name": "Jarrod Uthoff",
+  "seasons": [
+   "2016-17"
+  ]
+ },
  "jason-kidd": {
   "name": "Jason Kidd",
   "seasons": [
    "1994-95",
    "1995-96",
+   "1996-97",
    "2007-08",
    "2008-09",
    "2009-10",
    "2010-11",
    "2011-12"
+  ]
+ },
+ "jason-sasser": {
+  "name": "Jason Sasser",
+  "seasons": [
+   "1996-97"
   ]
  },
  "jason-terry": {
@@ -421,6 +1165,7 @@
  "javale-mcgee": {
   "name": "JaVale McGee",
   "seasons": [
+   "2015-16",
    "2022-23"
   ]
  },
@@ -431,13 +1176,38 @@
    "1983-84"
   ]
  },
+ "jazian-gortman": {
+  "name": "Jazian Gortman",
+  "seasons": [
+   "2024-25"
+  ]
+ },
+ "jeff-withey": {
+  "name": "Jeff Withey",
+  "seasons": [
+   "2017-18"
+  ]
+ },
+ "jeremiah-robinson-earl": {
+  "name": "Jeremiah Robinson-Earl",
+  "seasons": [
+   "2025-26"
+  ]
+ },
+ "jeremy-evans": {
+  "name": "Jeremy Evans",
+  "seasons": [
+   "2015-16"
+  ]
+ },
  "jerry-stackhouse": {
   "name": "Jerry Stackhouse",
   "seasons": [
    "2004-05",
    "2005-06",
    "2006-07",
-   "2007-08"
+   "2007-08",
+   "2008-09"
   ]
  },
  "jett-howard": {
@@ -463,16 +1233,65 @@
    "1981-82"
   ]
  },
+ "jj-redick": {
+  "name": "JJ Redick",
+  "seasons": [
+   "2020-21"
+  ]
+ },
+ "john-hotrod-williams": {
+  "name": "John Hotrod Williams",
+  "seasons": [
+   "1998-99"
+  ]
+ },
+ "john-jenkins": {
+  "name": "John Jenkins",
+  "seasons": [
+   "2015-16"
+  ]
+ },
+ "john-poulakidas": {
+  "name": "John Poulakidas",
+  "seasons": [
+   "2025-26"
+  ]
+ },
+ "johnathan-motley": {
+  "name": "Johnathan Motley",
+  "seasons": [
+   "2017-18"
+  ]
+ },
+ "johnny-newman": {
+  "name": "Johnny Newman",
+  "seasons": [
+   "2001-02"
+  ]
+ },
+ "jonathan-gibson": {
+  "name": "Jonathan Gibson",
+  "seasons": [
+   "2016-17"
+  ]
+ },
  "jose-calderon": {
   "name": "Jose Calderon",
   "seasons": [
-   "2013-14",
-   "2014-15"
+   "2013-14"
+  ]
+ },
+ "josh-emmanuel-akognon": {
+  "name": "Josh Emmanuel Akognon",
+  "seasons": [
+   "2012-13"
   ]
  },
  "josh-green": {
   "name": "Josh Green",
   "seasons": [
+   "2020-21",
+   "2021-22",
    "2022-23",
    "2023-24"
   ]
@@ -489,16 +1308,118 @@
    "2009-10"
   ]
  },
+ "josh-mcroberts": {
+  "name": "Josh McRoberts",
+  "seasons": [
+   "2017-18"
+  ]
+ },
+ "josh-powell": {
+  "name": "Josh Powell",
+  "seasons": [
+   "2005-06"
+  ]
+ },
+ "josh-reaves": {
+  "name": "Josh Reaves",
+  "seasons": [
+   "2019-20"
+  ]
+ },
  "josh-richardson": {
   "name": "Josh Richardson",
   "seasons": [
    "2020-21"
   ]
  },
+ "justin-anderson": {
+  "name": "Justin Anderson",
+  "seasons": [
+   "2015-16",
+   "2016-17"
+  ]
+ },
+ "justin-dentmon": {
+  "name": "Justin Dentmon",
+  "seasons": [
+   "2012-13"
+  ]
+ },
+ "justin-holiday": {
+  "name": "Justin Holiday",
+  "seasons": [
+   "2022-23"
+  ]
+ },
+ "justin-jackson": {
+  "name": "Justin Jackson",
+  "seasons": [
+   "2018-19",
+   "2019-20"
+  ]
+ },
+ "juwan-howard": {
+  "name": "Juwan Howard",
+  "seasons": [
+   "2000-01",
+   "2001-02",
+   "2007-08"
+  ]
+ },
+ "kai-jones": {
+  "name": "Kai Jones",
+  "seasons": [
+   "2024-25"
+  ]
+ },
  "keith-van-horn": {
   "name": "Keith Van Horn",
   "seasons": [
+   "2004-05",
    "2005-06"
+  ]
+ },
+ "kelenna-azubuike": {
+  "name": "Kelenna Azubuike",
+  "seasons": [
+   "2011-12"
+  ]
+ },
+ "kemba-walker": {
+  "name": "Kemba Walker",
+  "seasons": [
+   "2022-23"
+  ]
+ },
+ "kessler-edwards": {
+  "name": "Kessler Edwards",
+  "seasons": [
+   "2024-25"
+  ]
+ },
+ "kevin-ollie": {
+  "name": "Kevin Ollie",
+  "seasons": [
+   "1997-98"
+  ]
+ },
+ "kevin-willis": {
+  "name": "Kevin Willis",
+  "seasons": [
+   "2006-07"
+  ]
+ },
+ "khalid-reeves": {
+  "name": "Khalid Reeves",
+  "seasons": [
+   "1996-97",
+   "1997-98"
+  ]
+ },
+ "khris-middleton": {
+  "name": "Khris Middleton",
+  "seasons": [
+   "2025-26"
   ]
  },
  "klay-thompson": {
@@ -508,13 +1429,42 @@
    "2025-26"
   ]
  },
- "kristaps-porzingis": {
-  "name": "Kristaps Porziņģis",
+ "kostas-antetokounmpo": {
+  "name": "Kostas Antetokounmpo",
   "seasons": [
-   "2018-19",
+   "2018-19"
+  ]
+ },
+ "kris-humphries": {
+  "name": "Kris Humphries",
+  "seasons": [
+   "2009-10"
+  ]
+ },
+ "kristaps-porzingis": {
+  "name": "Kristaps Porzingis",
+  "seasons": [
    "2019-20",
    "2020-21",
    "2021-22"
+  ]
+ },
+ "kurt-thomas": {
+  "name": "Kurt Thomas",
+  "seasons": [
+   "1997-98"
+  ]
+ },
+ "kyle-collinsworth": {
+  "name": "Kyle Collinsworth",
+  "seasons": [
+   "2017-18"
+  ]
+ },
+ "kylor-kelley": {
+  "name": "Kylor Kelley",
+  "seasons": [
+   "2024-25"
   ]
  },
  "kyrie-irving": {
@@ -523,7 +1473,6 @@
    "2022-23",
    "2023-24",
    "2024-25",
-   "2025-26",
    "2026-27"
   ]
  },
@@ -533,8 +1482,37 @@
    "2011-12"
   ]
  },
+ "loren-meyer": {
+  "name": "Loren Meyer",
+  "seasons": [
+   "1995-96",
+   "1996-97"
+  ]
+ },
+ "lorenzo-williams": {
+  "name": "Lorenzo Williams",
+  "seasons": [
+   "1993-94",
+   "1994-95",
+   "1995-96"
+  ]
+ },
+ "loy-vaught": {
+  "name": "Loy Vaught",
+  "seasons": [
+   "2000-01"
+  ]
+ },
+ "lucious-harris": {
+  "name": "Lucious Harris",
+  "seasons": [
+   "1993-94",
+   "1994-95",
+   "1995-96"
+  ]
+ },
  "luka-doncic": {
-  "name": "Luka Dončić",
+  "name": "Luka Doncic",
   "seasons": [
    "2018-19",
    "2019-20",
@@ -543,6 +1521,24 @@
    "2022-23",
    "2023-24",
    "2024-25"
+  ]
+ },
+ "malik-allen": {
+  "name": "Malik Allen",
+  "seasons": [
+   "2007-08"
+  ]
+ },
+ "mamadou-n-diaye": {
+  "name": "Mamadou N'diaye",
+  "seasons": [
+   "2003-04"
+  ]
+ },
+ "manny-harris": {
+  "name": "Manny Harris",
+  "seasons": [
+   "2016-17"
   ]
  },
  "marcus-sasser": {
@@ -560,13 +1556,75 @@
    "1984-85",
    "1985-86",
    "1986-87",
-   "1987-88"
+   "1987-88",
+   "1988-89"
+  ]
+ },
+ "mark-bryant": {
+  "name": "Mark Bryant",
+  "seasons": [
+   "2000-01"
+  ]
+ },
+ "mark-strickland": {
+  "name": "Mark Strickland",
+  "seasons": [
+   "2002-03"
+  ]
+ },
+ "mark-west": {
+  "name": "Mark West",
+  "seasons": [
+   "1983-84"
+  ]
+ },
+ "markieff-morris": {
+  "name": "Markieff Morris",
+  "seasons": [
+   "2022-23",
+   "2023-24",
+   "2024-25"
+  ]
+ },
+ "marquese-chriss": {
+  "name": "Marquese Chriss",
+  "seasons": [
+   "2021-22"
   ]
  },
  "marquis-daniels": {
   "name": "Marquis Daniels",
   "seasons": [
-   "2004-05"
+   "2003-04",
+   "2004-05",
+   "2005-06"
+  ]
+ },
+ "martin-muursepp": {
+  "name": "Martin Muursepp",
+  "seasons": [
+   "1996-97",
+   "1997-98"
+  ]
+ },
+ "marvin-bagley-iii": {
+  "name": "Marvin Bagley III",
+  "seasons": [
+   "2025-26"
+  ]
+ },
+ "matt-carroll": {
+  "name": "Matt Carroll",
+  "seasons": [
+   "2008-09",
+   "2009-10"
+  ]
+ },
+ "maurice-ager": {
+  "name": "Maurice Ager",
+  "seasons": [
+   "2006-07",
+   "2007-08"
   ]
  },
  "max-christie": {
@@ -586,7 +1644,14 @@
    "2020-21",
    "2021-22",
    "2022-23",
-   "2023-24"
+   "2023-24",
+   "2024-25"
+  ]
+ },
+ "mckinley-wright-iv": {
+  "name": "McKinley Wright IV",
+  "seasons": [
+   "2022-23"
   ]
  },
  "michael-finley": {
@@ -603,6 +1668,24 @@
    "2004-05"
   ]
  },
+ "michael-kidd-gilchrist": {
+  "name": "Michael Kidd-Gilchrist",
+  "seasons": [
+   "2019-20"
+  ]
+ },
+ "mike-james": {
+  "name": "Mike James",
+  "seasons": [
+   "2012-13"
+  ]
+ },
+ "miles-kelly": {
+  "name": "Miles Kelly",
+  "seasons": [
+   "2025-26"
+  ]
+ },
  "monta-ellis": {
   "name": "Monta Ellis",
   "seasons": [
@@ -616,9 +1699,32 @@
    "2026-27"
   ]
  },
+ "morlon-wiley": {
+  "name": "Morlon Wiley",
+  "seasons": [
+   "1988-89",
+   "1992-93",
+   "1993-94",
+   "1994-95"
+  ]
+ },
+ "moses-brown": {
+  "name": "Moses Brown",
+  "seasons": [
+   "2021-22",
+   "2024-25"
+  ]
+ },
+ "moses-wright": {
+  "name": "Moses Wright",
+  "seasons": [
+   "2021-22"
+  ]
+ },
  "moussa-cisse": {
   "name": "Moussa Cisse",
   "seasons": [
+   "2025-26",
    "2026-27"
   ]
  },
@@ -630,10 +1736,23 @@
    "2026-27"
   ]
  },
+ "nate-hinton": {
+  "name": "Nate Hinton",
+  "seasons": [
+   "2020-21"
+  ]
+ },
  "nerlens-noel": {
   "name": "Nerlens Noel",
   "seasons": [
-   "2016-17"
+   "2016-17",
+   "2017-18"
+  ]
+ },
+ "nick-fazekas": {
+  "name": "Nick Fazekas",
+  "seasons": [
+   "2007-08"
   ]
  },
  "nick-van-exel": {
@@ -643,17 +1762,41 @@
    "2002-03"
   ]
  },
+ "nicolas-brussino": {
+  "name": "Nicolas Brussino",
+  "seasons": [
+   "2016-17"
+  ]
+ },
+ "nicolo-melli": {
+  "name": "Nicolo Melli",
+  "seasons": [
+   "2020-21"
+  ]
+ },
  "o-j-mayo": {
   "name": "O.J. Mayo",
   "seasons": [
    "2012-13"
   ]
  },
+ "obinna-ekezie": {
+  "name": "Obinna Ekezie",
+  "seasons": [
+   "2000-01"
+  ]
+ },
+ "oliver-miller": {
+  "name": "Oliver Miller",
+  "seasons": [
+   "1996-97"
+  ]
+ },
  "olivier-maxence-prosper": {
   "name": "Olivier-Maxence Prosper",
   "seasons": [
-   "2024-25",
-   "2025-26"
+   "2023-24",
+   "2024-25"
   ]
  },
  "p-j-washington": {
@@ -665,10 +1808,75 @@
    "2026-27"
   ]
  },
+ "pavel-podkolzin": {
+  "name": "Pavel Podkolzin",
+  "seasons": [
+   "2004-05",
+   "2005-06"
+  ]
+ },
  "peja-stojakovic": {
-  "name": "Peja Stojaković",
+  "name": "Peja Stojakovic",
   "seasons": [
    "2010-11"
+  ]
+ },
+ "pierre-deshawn-jackson": {
+  "name": "Pierre Deshawn Jackson",
+  "seasons": [
+   "2016-17"
+  ]
+ },
+ "popeye-jones": {
+  "name": "Popeye Jones",
+  "seasons": [
+   "1993-94",
+   "1994-95",
+   "1995-96",
+   "2002-03"
+  ]
+ },
+ "pops-mensah-bonsu": {
+  "name": "Pops Mensah-Bonsu",
+  "seasons": [
+   "2006-07"
+  ]
+ },
+ "quentin-grimes": {
+  "name": "Quentin Grimes",
+  "seasons": [
+   "2024-25"
+  ]
+ },
+ "quincy-acy": {
+  "name": "Quincy Acy",
+  "seasons": [
+   "2016-17"
+  ]
+ },
+ "quinn-cook": {
+  "name": "Quinn Cook",
+  "seasons": [
+   "2016-17"
+  ]
+ },
+ "quinton-ross": {
+  "name": "Quinton Ross",
+  "seasons": [
+   "2009-10"
+  ]
+ },
+ "raef-lafrentz": {
+  "name": "Raef LaFrentz",
+  "seasons": [
+   "2001-02",
+   "2002-03"
+  ]
+ },
+ "raja-bell": {
+  "name": "Raja Bell",
+  "seasons": [
+   "2002-03"
   ]
  },
  "rajon-rondo": {
@@ -677,17 +1885,92 @@
    "2014-15"
   ]
  },
+ "randell-jackson": {
+  "name": "Randell Jackson",
+  "seasons": [
+   "1999-00"
+  ]
+ },
+ "randy-white": {
+  "name": "Randy White",
+  "seasons": [
+   "1989-90",
+   "1990-91",
+   "1991-92",
+   "1992-93",
+   "1993-94"
+  ]
+ },
+ "rawle-marshall": {
+  "name": "Rawle Marshall",
+  "seasons": [
+   "2005-06"
+  ]
+ },
+ "ray-spalding": {
+  "name": "Ray Spalding",
+  "seasons": [
+   "2018-19"
+  ]
+ },
  "raymond-felton": {
   "name": "Raymond Felton",
   "seasons": [
+   "2014-15",
    "2015-16"
   ]
  },
- "reggie-bullock": {
-  "name": "Reggie Bullock",
+ "reggie-bullock-jr": {
+  "name": "Reggie Bullock Jr.",
   "seasons": [
    "2021-22",
    "2022-23"
+  ]
+ },
+ "reggie-slater": {
+  "name": "Reggie Slater",
+  "seasons": [
+   "1995-96"
+  ]
+ },
+ "richard-jefferson": {
+  "name": "Richard Jefferson",
+  "seasons": [
+   "2014-15"
+  ]
+ },
+ "richaun-holmes": {
+  "name": "Richaun Holmes",
+  "seasons": [
+   "2023-24"
+  ]
+ },
+ "rick-hughes": {
+  "name": "Rick Hughes",
+  "seasons": [
+   "1999-00"
+  ]
+ },
+ "ricky-ledo": {
+  "name": "Ricky Ledo",
+  "seasons": [
+   "2013-14",
+   "2014-15"
+  ]
+ },
+ "robert-pack": {
+  "name": "Robert Pack",
+  "seasons": [
+   "1996-97",
+   "1997-98",
+   "1998-99",
+   "1999-00"
+  ]
+ },
+ "rodrick-rhodes": {
+  "name": "Rodrick Rhodes",
+  "seasons": [
+   "1999-00"
   ]
  },
  "rodrigue-beaubois": {
@@ -695,7 +1978,8 @@
   "seasons": [
    "2009-10",
    "2010-11",
-   "2011-12"
+   "2011-12",
+   "2012-13"
   ]
  },
  "rolando-blackman": {
@@ -719,13 +2003,44 @@
   "seasons": [
    "1986-87",
    "1987-88",
-   "1988-89"
+   "1988-89",
+   "1989-90",
+   "1990-91",
+   "1994-95"
+  ]
+ },
+ "ryan-broekhoff": {
+  "name": "Ryan Broekhoff",
+  "seasons": [
+   "2018-19",
+   "2019-20"
+  ]
+ },
+ "ryan-hollins": {
+  "name": "Ryan Hollins",
+  "seasons": [
+   "2008-09"
   ]
  },
  "ryan-nembhard": {
   "name": "Ryan Nembhard",
   "seasons": [
    "2025-26"
+  ]
+ },
+ "salah-mejri": {
+  "name": "Salah Mejri",
+  "seasons": [
+   "2015-16",
+   "2016-17",
+   "2017-18",
+   "2018-19"
+  ]
+ },
+ "sam-cassell": {
+  "name": "Sam Cassell",
+  "seasons": [
+   "1996-97"
   ]
  },
  "sam-perkins": {
@@ -737,6 +2052,14 @@
    "1987-88",
    "1988-89",
    "1989-90"
+  ]
+ },
+ "samaki-walker": {
+  "name": "Samaki Walker",
+  "seasons": [
+   "1996-97",
+   "1997-98",
+   "1998-99"
   ]
  },
  "samuel-dalembert": {
@@ -751,6 +2074,51 @@
    "2026-27"
   ]
  },
+ "sasha-danilovic": {
+  "name": "Sasha Danilovic",
+  "seasons": [
+   "1996-97"
+  ]
+ },
+ "sasha-pavlovic": {
+  "name": "Sasha Pavlovic",
+  "seasons": [
+   "2010-11"
+  ]
+ },
+ "scott-brooks": {
+  "name": "Scott Brooks",
+  "seasons": [
+   "1994-95",
+   "1995-96"
+  ]
+ },
+ "scott-williams": {
+  "name": "Scott Williams",
+  "seasons": [
+   "2003-04"
+  ]
+ },
+ "scotty-hopson": {
+  "name": "Scotty Hopson",
+  "seasons": [
+   "2017-18"
+  ]
+ },
+ "sean-rooks": {
+  "name": "Sean Rooks",
+  "seasons": [
+   "1992-93",
+   "1993-94",
+   "1999-00"
+  ]
+ },
+ "sean-williams": {
+  "name": "Sean Williams",
+  "seasons": [
+   "2011-12"
+  ]
+ },
  "sergio-de-larrea": {
   "name": "Sergio de Larrea",
   "seasons": [
@@ -761,9 +2129,28 @@
   "name": "Seth Curry",
   "seasons": [
    "2016-17",
-   "2017-18",
    "2019-20",
    "2023-24"
+  ]
+ },
+ "shane-larkin": {
+  "name": "Shane Larkin",
+  "seasons": [
+   "2013-14"
+  ]
+ },
+ "shawn-bradley": {
+  "name": "Shawn Bradley",
+  "seasons": [
+   "1996-97",
+   "1997-98",
+   "1998-99",
+   "1999-00",
+   "2000-01",
+   "2001-02",
+   "2002-03",
+   "2003-04",
+   "2004-05"
   ]
  },
  "shawn-marion": {
@@ -776,11 +2163,36 @@
    "2013-14"
   ]
  },
+ "shawn-respert": {
+  "name": "Shawn Respert",
+  "seasons": [
+   "1997-98"
+  ]
+ },
+ "shawne-williams": {
+  "name": "Shawne Williams",
+  "seasons": [
+   "2008-09"
+  ]
+ },
  "spencer-dinwiddie": {
   "name": "Spencer Dinwiddie",
   "seasons": [
    "2021-22",
-   "2022-23"
+   "2022-23",
+   "2024-25"
+  ]
+ },
+ "stacey-king": {
+  "name": "Stacey King",
+  "seasons": [
+   "1996-97"
+  ]
+ },
+ "sterling-brown": {
+  "name": "Sterling Brown",
+  "seasons": [
+   "2021-22"
   ]
  },
  "steve-nash": {
@@ -794,20 +2206,70 @@
    "2003-04"
   ]
  },
- "tarik-biberovic": {
-  "name": "Tarik Biberovic",
+ "steve-novak": {
+  "name": "Steve Novak",
   "seasons": [
-   "2026-27"
+   "2010-11"
+  ]
+ },
+ "stevin-smith": {
+  "name": "Stevin Smith",
+  "seasons": [
+   "1996-97"
+  ]
+ },
+ "tariq-abdul-wahad": {
+  "name": "Tariq Abdul-Wahad",
+  "seasons": [
+   "2001-02",
+   "2002-03"
+  ]
+ },
+ "terry-davis": {
+  "name": "Terry Davis",
+  "seasons": [
+   "1991-92",
+   "1992-93",
+   "1993-94",
+   "1994-95",
+   "1995-96"
+  ]
+ },
+ "theo-pinson": {
+  "name": "Theo Pinson",
+  "seasons": [
+   "2021-22",
+   "2022-23"
+  ]
+ },
+ "tim-hardaway": {
+  "name": "Tim Hardaway",
+  "seasons": [
+   "2001-02"
   ]
  },
  "tim-hardaway-jr": {
   "name": "Tim Hardaway Jr.",
   "seasons": [
+   "2018-19",
    "2019-20",
    "2020-21",
    "2021-22",
    "2022-23",
    "2023-24"
+  ]
+ },
+ "tim-legler": {
+  "name": "Tim Legler",
+  "seasons": [
+   "1992-93",
+   "1993-94"
+  ]
+ },
+ "tim-thomas": {
+  "name": "Tim Thomas",
+  "seasons": [
+   "2009-10"
   ]
  },
  "tobi-lawal": {
@@ -822,11 +2284,100 @@
    "1980-81"
   ]
  },
+ "tony-campbell": {
+  "name": "Tony Campbell",
+  "seasons": [
+   "1993-94"
+  ]
+ },
+ "tony-delk": {
+  "name": "Tony Delk",
+  "seasons": [
+   "2003-04"
+  ]
+ },
+ "tony-dumas": {
+  "name": "Tony Dumas",
+  "seasons": [
+   "1994-95",
+   "1995-96",
+   "1996-97"
+  ]
+ },
+ "travis-best": {
+  "name": "Travis Best",
+  "seasons": [
+   "2003-04"
+  ]
+ },
+ "trenton-hassell": {
+  "name": "Trenton Hassell",
+  "seasons": [
+   "2007-08"
+  ]
+ },
+ "trey-burke": {
+  "name": "Trey Burke",
+  "seasons": [
+   "2018-19",
+   "2019-20",
+   "2020-21",
+   "2021-22"
+  ]
+ },
+ "troy-murphy": {
+  "name": "Troy Murphy",
+  "seasons": [
+   "2012-13"
+  ]
+ },
+ "tyler-bey": {
+  "name": "Tyler Bey",
+  "seasons": [
+   "2020-21"
+  ]
+ },
+ "tyler-dorsey": {
+  "name": "Tyler Dorsey",
+  "seasons": [
+   "2022-23"
+  ]
+ },
+ "tyler-smith": {
+  "name": "Tyler Smith",
+  "seasons": [
+   "2025-26"
+  ]
+ },
+ "tyrell-terry": {
+  "name": "Tyrell Terry",
+  "seasons": [
+   "2020-21"
+  ]
+ },
+ "tyronn-lue": {
+  "name": "Tyronn Lue",
+  "seasons": [
+   "2007-08"
+  ]
+ },
  "tyson-chandler": {
   "name": "Tyson Chandler",
   "seasons": [
    "2010-11",
    "2014-15"
+  ]
+ },
+ "tyus-jones": {
+  "name": "Tyus Jones",
+  "seasons": [
+   "2025-26"
+  ]
+ },
+ "vernon-maxwell": {
+  "name": "Vernon Maxwell",
+  "seasons": [
+   "2000-01"
   ]
  },
  "vince-carter": {
@@ -837,10 +2388,34 @@
    "2013-14"
   ]
  },
+ "walt-williams": {
+  "name": "Walt Williams",
+  "seasons": [
+   "2002-03"
+  ]
+ },
+ "walter-bond": {
+  "name": "Walter Bond",
+  "seasons": [
+   "1992-93"
+  ]
+ },
  "walter-clayton-jr": {
   "name": "Walter Clayton Jr.",
   "seasons": [
    "2026-27"
+  ]
+ },
+ "wayne-ellington": {
+  "name": "Wayne Ellington",
+  "seasons": [
+   "2013-14"
+  ]
+ },
+ "wes-iwundu": {
+  "name": "Wes Iwundu",
+  "seasons": [
+   "2020-21"
   ]
  },
  "wesley-matthews": {
@@ -855,7 +2430,9 @@
  "willie-cauley-stein": {
   "name": "Willie Cauley-Stein",
   "seasons": [
-   "2020-21"
+   "2019-20",
+   "2020-21",
+   "2021-22"
   ]
  },
  "yi-jianlian": {
@@ -881,6 +2458,13 @@
   "name": "Zaza Pachulia",
   "seasons": [
    "2015-16"
+  ]
+ },
+ "zhizhi-wang": {
+  "name": "ZhiZhi Wang",
+  "seasons": [
+   "2000-01",
+   "2001-02"
   ]
  }
 }
