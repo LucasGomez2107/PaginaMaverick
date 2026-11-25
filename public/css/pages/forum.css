@@ -1,0 +1,28 @@
+.forum-page { --fo-navy: var(--navy,#002B5E); --fo-royal: var(--royal,#0064B1); --fo-silver: var(--silver,#BBC4CA); --fo-ink: var(--ink,#061922); }
+.fo-h2 { font-family: var(--font-display, inherit); text-transform: uppercase; letter-spacing: .03em; margin: .5rem 0 0; }
+.fo-back { font-family: var(--font-mono, monospace); font-size: .85rem; text-decoration: none; color: var(--fo-royal); }
+.fo-game { display: flex; flex-direction: column; gap: .6rem; text-decoration: none; color: inherit; transition: transform .12s, box-shadow .12s; }
+.fo-game:hover { transform: translate(-2px,-2px); }
+.fo-game-vs { display: flex; align-items: baseline; gap: .5rem; flex-wrap: wrap; }
+.fo-ha { font-family: var(--font-mono, monospace); text-transform: uppercase; font-size: .8rem; color: var(--fo-royal); }
+.fo-opp { font-family: var(--font-display, inherit); font-size: 1.5rem; font-weight: 800; text-transform: uppercase; line-height: 1.05; }
+.fo-abbr { font-family: var(--font-mono, monospace); color: var(--fo-silver); font-weight: 700; margin-left: auto; font-size: 1.1rem; }
+.fo-game-foot { display: flex; justify-content: space-between; align-items: center; border-top: 2px dashed var(--fo-silver); padding-top: .5rem; font-size: .85rem; }
+.fo-live { background: var(--loss,#C8323C); color: #fff; animation: fo-pulse 1.4s infinite; }
+@keyframes fo-pulse { 50% { opacity: .55; } }
+.fo-title { font-family: var(--font-display, inherit); text-transform: uppercase; margin: .25rem 0; font-size: clamp(1.7rem, 5vw, 2.8rem); line-height: 1; }
+.fo-head { display: flex; flex-direction: column; gap: .6rem; }
+.fo-login { align-items: center; }
+.fo-comments { gap: .75rem; }
+.fo-thread { display: flex; flex-direction: column; gap: .5rem; }
+.fo-comment { background: var(--white,#fff); border: 2px solid var(--fo-ink); box-shadow: 3px 3px 0 var(--fo-ink); padding: .7rem .9rem; }
+.fo-comment.is-reply { margin-left: 1.5rem; border-left: 6px solid var(--fo-royal); box-shadow: 2px 2px 0 var(--fo-silver); }
+.fo-c-head { display: flex; align-items: center; gap: .5rem; }
+.fo-avatar { width: 1.7rem; height: 1.7rem; display: grid; place-items: center; background: var(--fo-navy); color: #fff; font-family: var(--font-display, inherit); font-weight: 800; }
+.fo-time { font-size: .78rem; font-family: var(--font-mono, monospace); }
+.fo-c-body { margin: .5rem 0; white-space: pre-wrap; overflow-wrap: anywhere; }
+.fo-c-actions { gap: .4rem; }
+.fo-del { color: var(--loss,#C8323C); }
+.fo-note { font-size: .75rem; text-align: center; }
+@media (max-width: 640px) { .fo-comment.is-reply { margin-left: .75rem; } }
+.forum-page .stack > .kicker, .forum-page .fo-head > .kicker { align-self: flex-start; width: fit-content; }

@@ -1,0 +1,37 @@
+.diary-page { --dy-ink: var(--ink,#061922); --dy-navy: var(--navy,#002B5E); --dy-royal: var(--royal,#0064B1); --dy-silver: var(--silver,#BBC4CA); --serif: Georgia, "Times New Roman", serif; display: flex; flex-direction: column; gap: 1.25rem; }
+.dy-mast { text-align: center; }
+.dy-mast-rule { border-top: 5px double var(--dy-ink); margin: .3rem 0; }
+.dy-paper { font-family: var(--serif); font-weight: 900; font-size: clamp(2rem, 8vw, 4.6rem); line-height: 1; margin: .3rem 0; letter-spacing: -.01em; text-transform: none; }
+.dy-mast-sub { display: flex; justify-content: space-between; flex-wrap: wrap; gap: .25rem 1rem; font-family: var(--font-mono, monospace); font-size: .75rem; text-transform: uppercase; letter-spacing: .06em; padding: .25rem 0; border-top: 1px solid var(--dy-ink); border-bottom: 1px solid var(--dy-ink); }
+.dy-mast-sub span:first-child { margin: 0 auto 0 0; }
+.dy-front { display: grid; gap: 1.5rem; }
+.dy-lead { border-bottom: 3px solid var(--dy-ink); padding-bottom: 1.25rem; display: flex; flex-direction: column; gap: .6rem; }
+.dy-lead .dy-h { font-size: clamp(1.8rem, 5vw, 3rem); }
+.dy-lead .dy-excerpt { font-size: 1.15rem; }
+.dy-cols { column-count: 3; column-gap: 1.5rem; column-rule: 1px solid var(--dy-silver); }
+.dy-item { break-inside: avoid; padding-bottom: 1rem; margin-bottom: 1rem; border-bottom: 1px solid var(--dy-silver); display: flex; flex-direction: column; gap: .4rem; }
+.dy-h { font-family: var(--serif); font-weight: 900; line-height: 1.05; margin: 0; font-size: 1.45rem; text-transform: none; }
+.dy-h a { color: var(--dy-ink); text-decoration: none; }
+.dy-h a:hover { color: var(--dy-royal); text-decoration: underline; }
+.dy-meta { font-family: var(--font-mono, monospace); font-size: .72rem; text-transform: uppercase; letter-spacing: .08em; color: var(--dy-royal); display: flex; gap: .6rem; }
+.dy-lang { border: 1px solid currentColor; padding: 0 .3rem; }
+.dy-sub { margin: 0; font-family: var(--serif); font-style: italic; font-size: 1.05rem; }
+.dy-excerpt { margin: 0; font-family: var(--serif); line-height: 1.5; }
+.dy-more { font-family: var(--font-display, inherit); text-transform: uppercase; font-size: .85rem; color: var(--dy-royal); text-decoration: none; letter-spacing: .05em; }
+.dy-score { display: inline-flex; align-items: center; gap: .75rem; flex-wrap: wrap; align-self: flex-start; border: 2px solid var(--dy-ink); box-shadow: 3px 3px 0 var(--dy-ink); background: var(--white,#fff); padding: .35rem .7rem; text-decoration: none; color: var(--dy-ink); font-family: var(--font-mono, monospace); font-size: .8rem; }
+.dy-score-teams { text-transform: uppercase; font-weight: 700; }
+.dy-score-num { font-family: var(--font-display, inherit); font-size: 1.25rem; font-weight: 800; }
+.dy-score-num.w { color: var(--win,#1E9E5A); } .dy-score-num.l { color: var(--loss,#C8323C); }
+.dy-score-date { color: var(--dy-royal); }
+.dy-article { max-width: 46rem; margin: 0 auto; display: flex; flex-direction: column; gap: 1rem; width: 100%; }
+.dy-bar { justify-content: space-between; align-items: center; }
+.dy-backlink { font-family: var(--font-mono, monospace); font-size: .85rem; text-decoration: none; color: var(--dy-royal); }
+.dy-title { font-family: var(--serif); font-weight: 900; font-size: clamp(2rem, 6vw, 3.4rem); line-height: 1.02; margin: 0; text-transform: none; }
+.dy-deck { font-family: var(--serif); font-style: italic; font-size: 1.3rem; margin: 0; color: var(--dy-navy); }
+.dy-byline { display: flex; gap: 1rem; font-family: var(--font-mono, monospace); font-size: .78rem; text-transform: uppercase; letter-spacing: .06em; border-top: 1px solid var(--dy-ink); border-bottom: 1px solid var(--dy-ink); padding: .35rem 0; }
+.dy-body { font-family: var(--serif); font-size: 1.1rem; line-height: 1.7; }
+.dy-body > p:first-of-type::first-letter { font-family: var(--serif); font-weight: 900; font-size: 3.6em; float: left; line-height: .85; padding: .08em .1em 0 0; color: var(--dy-navy); }
+.dy-body h2 { font-family: var(--font-display, inherit); text-transform: uppercase; color: var(--dy-navy); margin: 1.5rem 0 .3rem; border-bottom: 2px solid var(--dy-ink); }
+.dy-body ul { padding-left: 1.3rem; }
+@media (max-width: 900px) { .dy-cols { column-count: 2; } }
+@media (max-width: 600px) { .dy-cols { column-count: 1; } .dy-mast-sub span:first-child { margin: 0; } }
