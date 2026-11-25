@@ -6,8 +6,8 @@
   "type": "module",
   "main": "server/index.js",
   "scripts": {
-    "start": "node --no-warnings=ExperimentalWarning server/index.js",
-    "dev": "node --no-warnings=ExperimentalWarning --watch server/index.js",
+    "start": "node --env-file-if-exists=.env --no-warnings=ExperimentalWarning server/index.js",
+    "dev": "node --env-file-if-exists=.env --no-warnings=ExperimentalWarning --watch server/index.js",
     "import:csv": "node scripts/import-bref-csv.js"
   },
   "engines": {
